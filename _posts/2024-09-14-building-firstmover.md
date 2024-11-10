@@ -21,7 +21,7 @@ Another commenter [echoed the sentiment](https://arc.net/l/quote/ohyvhlto):
 
 > For me, the number one thing is being the first or one of the first to reach out. Last year my wife and I had Streeteasy and Zillow up day and night and would contact via text, phone, and email immediately (though email rarely worked).
 
-Let’s call this [the First Mover Advantage](https://corporatefinanceinstitute.com/resources/management/first-mover-advantage/#:~:text=The first-mover advantage refers,other entrants to the market.). Not only is it an established economic term, but it’s also a clever pun on "moving." And hey, I’m just a wild and funny guy 😜.
+Let’s call this [the First Mover Advantage](https://corporatefinanceinstitute.com/resources/management/first-mover-advantage/). Not only is it an established economic term, but it’s also a clever pun on "moving." And hey, I’m just a wild and funny guy 😜.
 
 The problem with StreetEasy's phone notifications is that they simply don't give you a First Mover Advantage. They suck. Either I'd see a listing with 40 saves already, or I’d get hit with ones I’d seen multiple times (which I later learned were [sponsored content](https://streeteasy.com/business/)).
 
