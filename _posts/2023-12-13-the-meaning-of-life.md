@@ -41,7 +41,7 @@ It’s hard to upend your life and live a carpe diem lifestyle of sex, drugs, an
 
 The creation mindset believes creating things makes life feel longer. What’s more memorable - eating Chipotle, or cooking your own dish? Watching Netflix, or performing in front of a camera or audience? It’s not the destination, it’s the journey: the act of creating is the novelty that will make life feel longer and more meaningful. In 2nd grade, I made a menu for my dream restaurant, which I still have…
 
-{% include figure image_path="https://media.licdn.com/dms/image/D4E12AQGiVNmyk8R2CQ/article-inline_image-shrink_1500_2232/0/1702492781945?e=1716422400&v=beta&t=FnzLFbmAnrIhkWhftyQnQFc1DEd2E2LLAPp4CuvVfR8" alt="this is a placeholder image" caption="35 cents for a salmon… those were the days! My low prices must have been from my COGS being $0- all my supply was “magically” found in the kitchen. Thanks, mom and dad!" %}
+{% include figure image_path="../assets/images/menu.png" alt="this is a placeholder image" caption="35 cents for a salmon… those were the days! My low prices must have been from my COGS being $0- all my supply was “magically” found in the kitchen. Thanks, mom and dad!" %}
 
 I remember writing that menu on my kitchen table and serving my first customer, Uncle Steve, a hot dog (ketchup, no bun). It’s hard to forget your greatest creations.
 
