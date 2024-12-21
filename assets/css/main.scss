@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-$sans-serif: 'Noto Sans', "FreightSansPro", -apple-system, BlinkMacSystemFont, Arial, sans-serif !default;
+$sans-serif: 'Noto Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif !default;
 $serif: $sans-serif;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
@@ -153,4 +153,9 @@ a, i {
   .page__content {
       font-size: .8em;
   };
+}
+
+// Nav bar titles
+.masthead__menu-item {
+  font-size: .8em;
 }
