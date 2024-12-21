@@ -2,7 +2,9 @@
 
 ---
 
-$sans-serif: "FreightSansPro", -apple-system, BlinkMacSystemFont, Arial, sans-serif !default;
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
+
+$sans-serif: 'Noto Sans', "FreightSansPro", -apple-system, BlinkMacSystemFont, Arial, sans-serif !default;
 $serif: $sans-serif;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
@@ -46,7 +48,7 @@ $active-color: mix(#fff, $primary-color, 80%) !default;
 
 .site-logo {
   display: flex;
-  transform: scale(1.2); // Adjust scale as needed
+  transform: scale(.9); // Adjust scale as needed
   flex-direction: column;
   align-items: center;
 
@@ -100,32 +102,33 @@ a {
 }
 
 // Font
-@font-face {
-  font-family: 'FreightSansPro';
-  src: url('FreightSansPro/FreightSansProBook-Regular.woff2') format('woff2');
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'FreightSansPro';
+//   src: url('FreightSansPro/FreightSansProBook-Regular.woff2') format('woff2');
+//   font-style: normal;
+// }
 
-@font-face {
-  font-family: 'FreightSansPro';
-  src: url('FreightSansPro/FreightSansProBook-Italic.woff2') format('woff2');
-  font-style: italic;
-}
+// @font-face {
+//   font-family: 'FreightSansPro';
+//   src: url('FreightSansPro/FreightSansProBook-Italic.woff2') format('woff2');
+//   font-style: italic;
+// }
 
-@font-face {
-  font-family: 'FreightSansPro';
-  src: url('FreightSansPro/FreightSansProSemibold-Italic.woff2') format('woff2');
-  font-weight: bold;
-  font-style: italic;
-}
+// @font-face {
+//   font-family: 'FreightSansPro';
+//   src: url('FreightSansPro/FreightSansProSemibold-Italic.woff2') format('woff2');
+//   font-weight: bold;
+//   font-style: italic;
+// }
 
-@font-face {
-  font-family: 'FreightSansPro';
-  src: url('FreightSansPro/FreightSansProSemibold-Regular.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-}
+// @font-face {
+//   font-family: 'FreightSansPro';
+//   src: url('FreightSansPro/FreightSansProSemibold-Regular.woff2') format('woff2');
+//   font-weight: bold;
+//   font-style: normal;
+// }
 
+// Cursors
 html {
   font-family: $sans-serif;
   cursor: url('cursors/cursorDefault.svg') 0 0, auto;
@@ -137,4 +140,17 @@ p, ul, ol, h1, h2, h3, h4, h5, h6 {
 
 a, i {
   cursor: url('cursors/cursorPointer.svg') 3 0, auto; /* Top-left tip slightly to the right for 28x29 pointer cursor */
+}
+
+// Article Width
+@media (min-width: 48em) {
+  .page {
+      float: none;
+      width: 80%;
+      padding-right: 0px;
+      margin: 0 auto;
+  };
+  .page__content {
+      font-size: .8em;
+  };
 }
