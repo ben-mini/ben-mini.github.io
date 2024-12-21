@@ -23,7 +23,7 @@ Oh, and my logo was inspired by the iPhone game [Cube Runner](https://www.reddit
 - <i class="fab fa-fw fa-github" aria-hidden="true"></i> [GitHub](https://github.com/benfwalla)
 
 ### Some Projects
-
+- Which NYC Grocery Store Is Cheapest? ([YouTube](https://youtu.be/io8bf9-k5YY?si=N-gZE1VaBMmAM1un))
 - Ben Thompson Stratechery Chatbot ([Web App](https://unofficial-stratechery-chatbot.streamlit.app/))
 - Can Data Make Me a Better Basketball Rebounder? ([Youtube](https://www.youtube.com/watch?v=fsCXGvJFfHI))
 
