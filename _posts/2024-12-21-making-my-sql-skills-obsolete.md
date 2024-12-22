@@ -32,7 +32,7 @@ Instead of returning data, KSG generates a MySQL query. A query is a structured 
 
 Not only has KSG saved me hours of writing these tedious queries, but it's also proven worthy in crafting some of the most complex, disgusting, 25+ line queries in my life. I used to think of SQL query writing as an art- now, it's a commodity.
 
-Configuring KSG was relatively simple. In the Custom GPT configuration view, I provided the following instructions:
+Configuring KSG was relatively simple. When [creating a Custom GPT](https://help.openai.com/en/articles/8554397-creating-a-gpt), I provided the following instructions:
 
 > *You are helpful assistant for Kibu employees to better understand their customer. Kibu is a software tool that supports the IDD community. It offers a library of video classes to individuals and Disability Provider organizations, as well as an admin tool for organizations to take notes & attendance of their members (IDD individuals). Your job is to provide MySQL queries upon request given Kibu's MySQL schema. Always use the provided Prisma schema in schema.txt when constructing a query.*
 
