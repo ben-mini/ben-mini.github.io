@@ -40,7 +40,7 @@ A ***schema*** is the structure that defines how a database is organized. It inc
 
 Even a Google Sheet can have a schema. In the image below, the schema of this Google Sheet consists of a User table with five columns (ID, First Name, Last Name, Age, and State) and two other tables (Activity and Medical Info) that are likely related to the User table.
 
-<img src="../assets/images/google-sheet-schema.png" alt="Google Sheet Schema" style="zoom:80%;" />
+<img src="../assets/images/nba-schema-example.png" alt="nba-schema-example.png" style="zoom:75%;" />
 
 Most production databases and SaaS providers maintain a document that defines your data schema. Kibu's schema is explicitly defined with [Prisma](https://www.prisma.io/). Schemas are written in a structured way that makes them readable to computers but indecipherable to humans. *This is the perfect recipe for an LLM use case.*
 
