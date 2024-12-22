@@ -14,11 +14,11 @@ I try not to make my posts too technical, but I can't resist. I'd like to briefl
 
 ### What it is
 
-The Kibu Schema God (KSG) is a [Custom GPT](https://openai.com/index/introducing-gpts/) that helps me get immediate answers on my product's data. It has full knowledge of my company's database schema and context around it. KSG allows all Kibu employees with a basic understanding of SQL to construct queries that provide insights into our customers. Humbly put, it is an omniscient data deity that takes mortals' plain-English requests and provides data in seconds.
+The Kibu Schema God (KSG) is a [Custom GPT](https://openai.com/index/introducing-gpts/) that helps me get immediate answers on my product's data. It has full knowledge of my company's database schema and context around it. KSG allows all Kibu employees with a basic understanding of SQL to construct queries that provide insights into our customers. Humbly put, it is an omniscient data deity that takes mortals’ plain-English requests and provides the path to the data in seconds.
 
 As a VP of Customer Success with an engineering background, I use KSG daily to gain insights into our customers' product usage. Which organizations watched the most videos this week? How many time-tracking events occurred after 5 PM ET this month? Relative to ARR, which customers have the most alarmingly low usage? I can copy+paste these exact questions into KSG, and it will return exactly what I need.
 
-The beauty of KSG is that it's completely disconnected from our actual database, ensuring privacy and HIPAA compliance. No customer, user, or health-related data is ever shared with Schema God or the LLM .Further, it took me just a few minutes to create, with occasional tweaking and maintaining- all without code.
+The beauty of KSG is that it's completely disconnected from our actual database, ensuring privacy and HIPAA compliance. No customer, user, or health-related data is ever shared with Schema God or the LLM. Further, it took me just a few minutes to create, with occasional tweaking and maintaining- all without code.
 
 ### How it Works
 
@@ -28,7 +28,7 @@ This morning, I wanted to know which users watched the most classes on Kibu (by 
 
 Instead of returning data, KSG generates a MySQL query. A query is a structured language that enables interaction with Kibu's MySQL database. I then copy+paste that query into an SQL editor, like [TablePlus](https://tableplus.com/), and view the results:
 
-<img src="../assets/images/kibu-schema-god-output.png" alt="Kibu Schema God Output" style="zoom:70%;" />
+<img src="../assets/images/sql-query-example.png" alt="sql-query-example" style="zoom:67%;" />
 
 Not only has KSG saved me hours of writing these tedious queries, but it's also proven worthy in crafting some of the most complex, disgusting, 25+ line queries in my life. I used to think of SQL query writing as an art- now, it's a commodity.
 
