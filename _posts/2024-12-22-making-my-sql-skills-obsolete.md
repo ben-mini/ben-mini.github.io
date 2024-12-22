@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "Making My SQL Skills Obsolete"
+title:  "With Schema Gods, Anyone is a Data Analyst"
 date:   2024-12-22
 ---
 
