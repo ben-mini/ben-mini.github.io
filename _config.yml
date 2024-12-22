@@ -26,7 +26,7 @@ title_separator          : "-"
 subtitle                 : "Mini essays about tech, business, and really whatever"
 name                     : "Ben Wallace"
 description              : "Mini essays about tech, business, and really whatever"
-url                      : "https://ben-mini.github.io"
+url                      : "https://ben-mini.com"
 baseurl                  : 
 repository               : "ben-mini/ben-mini"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
