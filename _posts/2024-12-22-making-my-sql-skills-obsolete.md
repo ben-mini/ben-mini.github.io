@@ -1,14 +1,12 @@
 ---
 layout: single
 title:  "Making My SQL Skills Obsolete"
-date:   2024-12-22
+date:   2024-12-21
 hidden: true
 
 ---
 
 ***Quick Update:*** *I updated my domain to ben-mini.com! All old URLs and the RSS feed under `ben-mini.github.io` will automatically redirect, so no changes are needed on your end.*
-
----
 
 By far, the most useful LLM app I've made is the Kibu Schema God:
 
