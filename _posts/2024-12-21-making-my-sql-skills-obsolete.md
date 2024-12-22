@@ -6,6 +6,10 @@ hidden: true
 
 ---
 
+***Quick Update:*** *I updated my domain to ben-mini.com! All old URLs and the RSS feed under `ben-mini.github.io` will automatically redirect, so no changes are needed on your end.*
+
+---
+
 By far, the most useful LLM app I've made is the Kibu Schema God:
 
 <img src="../assets/images/kibu-schema-god.png" alt="screen-2024-12-21-15.07.32" style="zoom:17%;" />
