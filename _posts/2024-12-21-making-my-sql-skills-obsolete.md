@@ -18,7 +18,7 @@ The Kibu Schema God (KSG) is a [Custom GPT](https://openai.com/index/introducing
 
 As a VP of Customer Success with an engineering background, I use KSG daily to gain insights into our customers' product usage. Which organizations watched the most videos this week? How many time-tracking events occurred after 5 PM ET this month? Relative to ARR, which customers have the most alarmingly low usage? I can copy+paste these exact questions into KSG, and it will return exactly what I need.
 
-The beauty of KSG is that it's completely disconnected from our actual database, ensuring privacy and HIPAA compliance. Further, it took me just a few minutes to create, with occasional tweaking and maintaining- all without code.
+The beauty of KSG is that it's completely disconnected from our actual database, ensuring privacy and HIPAA compliance. No customer, user, or health-related data is ever shared with Schema God or the LLM .Further, it took me just a few minutes to create, with occasional tweaking and maintaining- all without code.
 
 ### How it Works
 
