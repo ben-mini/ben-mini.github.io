@@ -33,7 +33,7 @@ FirstMover is a pretty simple app. [Here's the code for it](https://github.com/b
 
 Within a week, FirstMover found us an apartment. I connected instantly, booked a next-day tour, submitted my application, and got the place. When I asked the broker why we were chosen, he said, "Well, you had good credit, but ***honestly, you were the first to respond***." That’s market validation, baby!
 
-My co-founder Justin and I are planning to productize FirstMover and offer it for $25/month.
+My co-founder Clayton and I are planning to productize FirstMover and offer it for $25/month.
 
 ### Why $25/month?
 
