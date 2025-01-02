@@ -55,4 +55,4 @@ This ruling sets a precedent that logged-off scraping of public data is fair gam
 
 I'm excited for this. Not just because I think it's a great project that people will like, but that it aligns with business strategies that I've been thinking about for a long time. The Internet has greatly diminished the information gap between buyer and seller, and FirstMover is a service that gives buyers one small leg-up. 
 
-It's funny that [I admired Zillow for doing exactly this 2004](https://ben-mini.github.io/2024/old-school-business#the-market-for-lemons), and now I'm contemplating if they'll sue me for doing that exact thing, lol. We'll see!
+It's funny that [I admired Zillow for doing exactly this 2004](https://ben-mini.com/2024/old-school-business#the-market-for-lemons), and now I'm contemplating if they'll sue me for doing that exact thing, lol. We'll see!
