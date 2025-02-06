@@ -1,7 +1,7 @@
 ---
 layout: single
 title:  "What's Preventing Us from Building a Beautiful Product?"
-date:   2024-02-05
+date:   2025-02-05
 ---
 
 I just finished listening to [Lenny's conversation with Nan Yu](https://www.lennysnewsletter.com/p/linears-secret-to-building-beloved-b2b-products-nan-yu), Head of Product at Linear, about what it takes to build a great SaaS product.
