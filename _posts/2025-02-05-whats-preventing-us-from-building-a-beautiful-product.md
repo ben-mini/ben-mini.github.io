@@ -28,7 +28,7 @@ Is there a company that we can take inspiration from that's been in our position
 
 On the topic of preventing bloat, Nan said Linear is hyper-focused on delivering an exceptional [IC](https://chatgpt.com/share/67a41418-9ea4-800e-908f-9f621ae85250) experience and is willing to turn down feature requests that don't align with that vision. For example, if Nan got a request from a middle manager to make end-of-month reporting slightly easier, Linear will deny that request if it means the IC's work is strained a bit. 
 
-This "bottom-up" prioritization philosophy is downright enviable! Kibu is in the business of *compliance*, meaning that we are limited to the needs of our customers' regulators. If a government agency or grant provider wants our customer to complete a 3-page questionnaire for every member every day, then our customer has no choice but to pass that requirement down to us. Our ability to design a frictionless experience for ICs hits a ceiling when met with regulation, no matter how dumb.
+This "bottom-up" prioritization philosophy is downright enviable! Kibu is in the business of *compliance*, meaning that we are limited to the needs of our customers' regulators. If a government agency or grant provider want our customer to complete a 3-page questionnaire for every member every day, then our customer has no choice but to pass that requirement down to us. Our ability to design a frictionless experience for ICs hits a ceiling when met with regulation, no matter how dumb.
 
 This hindrance is particularly frustrating because *we recognize the economic value that an exceptional IC UX could bring to our customers*. If a low-level caretaker can take notes and track attendance on a tool that won't make them want to blow their brains out, then:
 
