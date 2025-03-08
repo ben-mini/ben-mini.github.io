@@ -9,7 +9,7 @@ A while back, I wrote a post titled "[What is a Platform?](https://ben-mini.com/
 
 But as Bill Simmons puts it best, there's always a good "zag" to every "zig". I want to challenge my own assumptions that platforms are inherently the best business model and explore how the opposite model, point solutions, can be just as healthy in product design. I want to compare two companies I admire: Notion (the platform) and Linear (the point solution). I also want to acknowledge my feelings about [Kibu's](https://kibuhq.com/) place in this battle and how forces like competitors, AI, and market needs influence us.
 
-![point-to-platform](../../../ben-mini/assets/images/point-to-platform.png)
+![point-to-platform](../assets/images/point-to-platform.png)
 
 ### Notion, the Platform
 
