@@ -7,7 +7,7 @@ header:
     og_image: "../assets/images/paper-towel-pricing.png"
 ---
 
-<img src="../assets/images/paper-towel-pricing.png" alt="Paper Towel Price Comparison" style="zoom: 15%;" />
+<img src="../assets/images/paper-towel-pricing.png" alt="Paper Towel Price Comparison" style="zoom: 20%;" />
 
 In a prior role, I experienced friction with my sales team's leadership:
 
