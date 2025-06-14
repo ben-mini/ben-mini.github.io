@@ -4,7 +4,7 @@ title: Trust and Procedural Fetishism
 date: 2025-06-14
 ---
 
-I recently finished reading [_Abundance_](https://www.goodreads.com/book/show/176444106-abundance) by Ezra Klein and Derek Thompson. The book explains the various missteps taken by the U.S. government that led us to where we are today: a bureaucratic sludge of policies and regulations that's caused ambitious projects to go over budget (e.g., Healthcare.gov) or remain unfinished (e.g., California High-Speed Rail). Klein and Thompson propose a renaissance of our public institutions - an invigorated era where government "gets out of the way" of itself and executes on projects only it can do.
+I recently finished reading [_Abundance_](https://www.goodreads.com/book/show/176444106-abundance) by Ezra Klein and Derek Thompson. The book explains the various missteps taken by the U.S. government that led us to where we are today: a bureaucratic sludge of policies and regulations that's caused ambitious projects to go over budget (e.g., Healthcare.gov) or remain unfinished (e.g., California High-Speed Rail). Klein and Thompson propose a renaissance of our public institutions- an invigorated era where government "gets out of the way" of itself and executes on projects only it can do.
 
 A world where existential issues, like housing and energy, are addressed at blazing speeds.
 
@@ -22,13 +22,13 @@ My startup, [Kibu](https://kibu.com), builds compliance software for Disability 
 
 The bureaucrats who manage these regulations are underfunded, out of touch, and lack cohesion. In disability care, bureaucrats provide funding to Disability Providers. Because of this exchange, bureaucrats must _trust_ that the money is being well-used. But because they cannot physically be in all facilities, they must build a different infrastructure to communicate and receive trust. That usually comes in the form of reports and documentation.
 
-Over time, these forms grow more complex. An edge case turns three questions into five. A lawsuit turns five into eight. A private partnership creates a new compliance rule - and eight becomes twelve.
+Over time, these forms grow more complex. An edge case turns three questions into five. A lawsuit turns five into eight. A private partnership creates a new compliance rule, and eight becomes twelve.
 
 As the reports get more convoluted, the bureaucrat’s eyes start to blur. He begins to check for "completeness" of the form rather than the outcomes or the story within it. There’s no time! Eventually, the providers start to recognize the real game being played. In the most technical sense, they don’t get funding by providing the best care to their individuals: _they get funding by writing "the right stuff" in the forms_.
 
 When I first joined Kibu, I thought I’d be challenged by the complexities of special needs and the unique complexities each diagnosis presents. Instead, I’m challenged by a jungle of rules and procedures.
 
-The dilution of institutions that focus more on compliance than outcomes is what we call [procedural fetishism](https://repository.law.umich.edu/cgi/viewcontent.cgi?article=4492&context=mlr). It has permeated the way our government operates- and is a major reason why public faith in it is at an all-time low.
+The dilution of institutions that focus more on compliance than outcomes is what we call [procedural fetishism](https://repository.law.umich.edu/cgi/viewcontent.cgi?article=4492&context=mlr). It has permeated the way our government operates and is a major reason why public faith in it is at an all-time low.
 
 ### So, just dismantle the government, right?
 
