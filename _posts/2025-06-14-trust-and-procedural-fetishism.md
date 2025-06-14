@@ -1,7 +1,6 @@
 ---
 layout: single
 title: Trust and Procedural Fetishism
-subtitle: subtitle
 date: 2025-06-14
 ---
 
