@@ -18,13 +18,15 @@ This stat hit me hard.
 
 My startup, [Kibu](https://kibu.com), builds compliance software for Disability Providers (those who support those with mental disabilities), and I’ve seen firsthand the amount of paperwork they must complete. Imagine writing a set of essays, medical trackings, behavior assessments, activity breakdowns, and goal completions- all with timestamps- for every individual, every day. While our product aims to make this record-keeping easier, it's not lost on me that we’re building inside a jungle of regulations.
 
+### How did we get here?
+
 The bureaucrats who manage these regulations are underfunded, out of touch, and lack cohesion. In disability care, bureaucrats provide funding to Disability Providers. Because of this exchange, bureaucrats must _trust_ that the money is being well-used. But because they cannot physically be in all facilities, they must build a different infrastructure to communicate and receive trust. That usually comes in the form of reports and documentation.
 
 Over time, these forms grow more complex. An edge case turns three questions into five. A lawsuit turns five into eight. A private partnership creates a new compliance rule - and eight becomes twelve.
 
 As the reports get more convoluted, the bureaucrat’s eyes start to blur. He begins to check for "completeness" of the form rather than the outcomes or the story within it. There’s no time! Eventually, the providers start to recognize the real game being played. In the most technical sense, they don’t get funding by providing the best care to their individuals: _they get funding by writing "the right stuff" in the forms_.
 
-When I first joined Kibu, I thought I’d be challenged by the complexities of special needs and the unique challenges each diagnosis presents. Instead, I’m challenged by a jungle of rules and procedures.
+When I first joined Kibu, I thought I’d be challenged by the complexities of special needs and the unique complexities each diagnosis presents. Instead, I’m challenged by a jungle of rules and procedures.
 
 The dilution of institutions that focus more on compliance than outcomes is what we call [procedural fetishism](https://repository.law.umich.edu/cgi/viewcontent.cgi?article=4492&context=mlr). It has permeated the way our government operates- and is a major reason why public faith in it is at an all-time low.
 
