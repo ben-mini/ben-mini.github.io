@@ -38,7 +38,7 @@ Government is the reason we’ve been able to innovate in projects without any c
 
 ### Doesn't procedural fetishism create jobs?
 
-Another reaction is to argue that procedural fetishism is _good_, as it’s created jobs (and entire industries) in the form of auditors, lawyers, and procurement brokers. Heck, one could argue that with less compliance, my startup might be existentially threatened.
+Another reaction is to argue that procedural fetishism is _good_, as it’s created jobs (and entire industries) in the form of auditors, lawyers, and procurement brokers. Heck, one could argue that with less compliance, Kibu might be existentially threatened.
 
 The tradeoff is that although these jobs are _around_ care, they aren’t _in_ care. We can all agree it would be cool to have more engineers in healthcare. But instead of developing compliance software, they’d be building real medical equipment that actually helps patients. In a world graded on outcomes over procedures, I actually think capitalism could drive _more_ jobs.
 
