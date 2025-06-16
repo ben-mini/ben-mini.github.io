@@ -26,7 +26,7 @@ Over time, these forms grow more complex. An edge case turns three questions int
 
 As the reports get more convoluted, the bureaucrat’s eyes start to blur. He begins to check for "completeness" of the form rather than the outcomes or the story within it. There’s no time! Eventually, the providers start to recognize the real game being played. In the most technical sense, they don’t get funding by providing the best care to their individuals: _they get funding by writing "the right stuff" in the forms_.
 
-When I first joined Kibu, I thought I’d be challenged by the complexities of special needs and the unique complexities each diagnosis presents. Instead, I’m challenged by a jungle of rules and procedures.
+When I first joined Kibu, I thought I’d be challenged by the complexities of special needs and the nuances each diagnosis presents. Instead, I’m challenged by a jungle of rules and procedures.
 
 The dilution of institutions that focus more on compliance than outcomes is what we call [procedural fetishism](https://repository.law.umich.edu/cgi/viewcontent.cgi?article=4492&context=mlr). It has permeated the way our government operates and is a major reason why public faith in it is at an all-time low.
 
