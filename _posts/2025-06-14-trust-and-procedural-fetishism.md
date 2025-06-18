@@ -20,7 +20,7 @@ My startup, [Kibu](https://kibu.com), builds compliance software for Disability 
 
 ### How did we get here?
 
-The bureaucrats who manage these regulations are underfunded, out of touch, and lack cohesion. In disability care, bureaucrats provide funding to Disability Providers. Because of this exchange, bureaucrats must _trust_ that the money is being well-used. But because they cannot physically be in all facilities, they must build a different infrastructure to communicate and receive trust. That usually comes in the form of reports and documentation.
+The bureaucrats who manage these regulations are underfunded, out of touch, and lack cohesion. In disability care, bureaucrats provide funding to Disability Providers. Because of this exchange, bureaucrats must _trust_ that the money is being well-used. But because they cannot physically be in all facilities, they must build a different infrastructure to communicate and receive trust. That usually comes in the form of forms and reports.
 
 Over time, these forms grow more complex. An edge case turns three questions into five. A lawsuit turns five into eight. A private partnership creates a new compliance rule, and eight becomes twelve.
 
