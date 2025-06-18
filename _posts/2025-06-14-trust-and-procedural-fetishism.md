@@ -22,7 +22,7 @@ My startup, [Kibu](https://kibu.com), builds compliance software for Disability 
 
 The bureaucrats who manage these regulations are underfunded, out of touch, and lack cohesion. In disability care, bureaucrats provide funding to Disability Providers. Because of this exchange, bureaucrats must _trust_ that the money is being well-used. But because they cannot physically be in all facilities, they must build a different infrastructure to communicate and receive trust. That usually comes in the form of forms and reports.
 
-Over time, these forms grow more complex. An edge case turns three questions into five. A lawsuit turns five into eight. A private partnership creates a new compliance rule, and eight becomes twelve.
+Over time, these forms grow more complex. An edge case turns three questions into five. A lawsuit turns five into eight. A private partnership creates a new compliance rule, and eight becomes twelve. It's become much easier to add more questions than to remove them.
 
 As the reports get more convoluted, the bureaucrat’s eyes start to blur. He begins to check for "completeness" of the form rather than the outcomes or the story within it. There’s no time! Eventually, the providers start to recognize the real game being played. In the most technical sense, they don’t get funding by providing the best care to their individuals: _they get funding by writing "the right stuff" in the forms_.
 
@@ -34,13 +34,13 @@ The dilution of institutions that focus more on compliance than outcomes is what
 
 A natural reaction to all of this is to antagonize, belittle, and destroy these institutions. But if something has a disease, there are smarter ways to address it than killing the host.
 
-Government is the reason we’ve been able to innovate in projects without any clear profit motive. The government created our libraries, highways, and Internet as ways to protect, connect, and improve our ways of life. They're the truest [platform](https://ben-mini.com/2024/what-is-a-platform) developers that for-profit companies have benefited off for centuries. It would be a damn shame if the next Internet was stymied by procedural fetishism.
+Government is the reason we’ve been able to innovate in projects without any clear profit motive. The government created our sewage, highways, and Internet as ways to protect, connect, and improve our ways of life. They're the truest [platform](https://ben-mini.com/2024/what-is-a-platform) developers that for-profit companies have benefited off for centuries. It would be a damn shame if the next Internet was stymied by procedural fetishism.
 
 ### Doesn't procedural fetishism create jobs?
 
 Another reaction is to argue that procedural fetishism is _good_, as it’s created jobs (and entire industries) in the form of auditors, lawyers, and procurement brokers. Heck, one could argue that with less compliance, Kibu might be existentially threatened.
 
-The tradeoff is that although these jobs are _around_ care, they aren’t _in_ care. We can all agree it would be cool to have more engineers in healthcare. But instead of developing compliance software, they’d be building real medical equipment that actually helps patients. In a world graded on outcomes over procedures, I actually think capitalism could drive _more_ jobs.
+The tradeoff is that although these jobs are _around_ care, they aren’t _in_ care. We can all agree it would be cool to have more engineers in healthcare. But instead of developing compliance software, they ought to be building real medical equipment that directly helps patients. In a world graded on outcomes over procedures, I actually think capitalism could drive _more_ jobs.
 
 At Kibu, I often fantasize about a world without compliance. I fall asleep at night wondering what data and AI could do to actually improve the lives of individuals. I imagine how freeing it would be to build a solution that’s unburdened by the misaligned requirements of policy. Kibu wouldn’t be diminished- we’d thrive.
 
