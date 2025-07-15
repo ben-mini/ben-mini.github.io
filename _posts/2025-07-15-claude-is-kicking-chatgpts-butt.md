@@ -7,7 +7,7 @@ date:   2025-07-15
 
 Back in high school, I remember receiving an email for a study guide from a friend. Instead of the PDF coming attached to the email, it was a link to a site called Dropbox. 
 
-<img src="../assets/images/dropbox.png" alt="Arc 000610" style="zoom:20%;" />
+<img src="../assets/images/dropbox.png" alt="Arc 000610" style="zoom:30%;" />
 
 Upon opening the file, you create an account. From there you're introduced to a feature stack that went well beyond any typical PDF: shared collaboration, comments, version history... the benefits of cloud computing- all within the familiarity of a PDF!
 
@@ -49,7 +49,7 @@ While technically impressive, I find this to be an oddly brilliant business stra
 
 One week before this Artifacts update, the father of vibe coding himself, Andrej Karpathy, went on stage to deliver a talk about the continued shifts in software development. [At the end](https://youtu.be/LCEmiRjPEtQ?si=R4UGkDAxe1rNVJtz&t=1941), Andrej shared that while the "coding" step of app development is easier than ever, getting to that last mile of production deployment still exists:
 
-<img src="../assets/images/andrej.png" alt="image-20250715191901438" style="zoom:20%;" />
+<img src="../assets/images/andrej.png" alt="Andrej slide" style="zoom:33%;" />
 
 While Claude Artifacts are still in this "toyish" phase of single-page web apps, you can't help but be in awe at all the things it solved on this slide: LLM API keys, Deployments, and Authentication. And no one needs to pay an Enterprise license to make it happen.
 
