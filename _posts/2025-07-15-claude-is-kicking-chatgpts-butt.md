@@ -26,7 +26,7 @@ Unlike ChatGPT, Anthropic has doubled down on Artifacts, making it more reliable
 >
 > Artifacts turn anyone into an app creator—no coding needed. Just tell Claude your idea to instantly create shareable apps, tools, and games.
 
-Here's their announcement video of a drum-making kit. You'll see that the drum kit users can "Describe [a] beat" in the Claude-powered search bar.
+Here's their announcement video of a drum-making kit. You'll see that users can "Describe [a] beat" in the Claude-powered search bar.
 
 {% include video id="iSn77jvjojA" provider="youtube" %}
 
