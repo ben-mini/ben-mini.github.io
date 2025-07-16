@@ -20,7 +20,7 @@ The rest of this post will be a follow-up of #1. In short, OpenAI appears to hav
 
 Meanwhile, Anthropic's Claude has been quietly pursuing a more powerful way for users to build for other users. Two months after the Custom GPT release, [Claude announced Artifacts](https://arc.net/l/quote/vlgfaqcb), allowing users to create single-page HTML apps, among other things. Artifacts became a hit within the tech community, potentially mainstreaming "vibe coding" for the first time. Writer Simon Willison (or dare I say, **fellow** writer) [became quite obsessed with Artifacts](https://simonwillison.net/2024/Oct/21/claude-artifacts/) over the past year.
 
-Unlike ChatGPT, Anthropic has doubled down on Artifacts, making it more reliable and accessible to users. And in June 2025, they went **big**. Anthropic announced that Artifacts can now become AI-powered:
+Unlike ChatGPT, Anthropic has doubled down on Artifacts, making it more reliable and accessible to users. And in June 2025, they went **big**. [Anthropic announced](https://www.anthropic.com/news/build-artifacts) that Artifacts can now become AI-powered:
 
 > Today, we’re introducing [...] the ability to embed AI capabilities directly into your creations—transforming artifacts into interactive, AI-powered apps.
 >
