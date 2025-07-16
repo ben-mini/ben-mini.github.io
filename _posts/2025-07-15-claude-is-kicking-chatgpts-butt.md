@@ -5,7 +5,7 @@ subtitle: A Pt.2 of Network Effects in Generative AI
 date:   2025-07-15
 ---
 
-Back in high school, I remember receiving an email for a study guide from a friend. Instead of the PDF coming attached to the email, it was a link to a site called Dropbox. 
+Back in high school, I remember receiving an email for a study guide from a friend. Instead of the PDF coming attached, it was a link to a site called Dropbox. 
 
 <img src="../assets/images/dropbox.png" alt="Arc 000610" style="zoom:30%;" />
 
