@@ -8,7 +8,7 @@ author-profile: true
 
 Hi 👋,
 
-Ben, here! I'm the VP of Customer Success at [Kibu](https://kibuhq.com/) living in NYC. I've worked as an automation engineer, project manager, and solution architect. I also have a fascination with product, edtech, and why tech companies do the things they do.
+Ben, here! I do Product and Customer Success at [Kibu](https://kibu.com/) living in NYC. I've worked as an automation engineer, project manager, and solution architect. My most foundational curiosities lie in product, edtech, and why tech companies do the things they do.
 
 I made `ben-mini` to jot down "mini essays". A mini essay is a stress-free way for me to record remarkable ideas from blogs, books, podcasts, friends, or my own experience. By forcing me to articulate my thoughts, my goal is for `ben-mini` to help me become a better technologist, strategist, and writer.
 
