@@ -13,7 +13,7 @@ Upon opening the file, you create an account. From there you're introduced to a 
 
 Dropbox achieved strong ***network effects*** in the 2010s due to generous free tiers, easy file sharing, and one-click account creation. Last year, I wrote [a blog post](https://ben-mini.com/2024/network-effects-in-generative-ai) on network effects, guessing if (and how) they would be brought into the AI market. In the post, I argued two points:
 
-1. OpenAI began flirting with network-driven growth by introducing Custom GPTs in November 2023, and even more so when making them accessible to free users in May 2024.
+1. OpenAI began flirting with network-driven growth by introducing Custom GPTs in November 2023, and even more so when making them accessible to free users in May 2024. They will double down on Custom GPTs in the interest of network effects.
 2. AI companies might not *need* network effects to succeed, as user-generated content might not be what incrementally improves these tools (rather, artificial content, better memory, & great UX)
 
 The rest of this post will be a follow-up of #1. In short, OpenAI appears to have [basically abandoned Custom GPTs](https://www.reddit.com/r/OpenAI/comments/1jt0bpl/please_stop_neglecting_custom_gpts_or_atleast/?utm_source=chatgpt.com) since their Spring '24 update, and I'm a bit stumped as to why. Sure, engagement might have been low, or a desire to shift the product team to other features like Canvas, improved memory, Deep Research, and Apple Intelligence integration. But, one would think that the allure of network effects would drive any consumer tech startup to continue toying with the idea!
