@@ -26,6 +26,8 @@ Oh, and my logo was inspired by the iPhone game [Cube Runner](https://www.reddit
 - Which NYC Grocery Store Is Cheapest? ([YouTube](https://youtu.be/io8bf9-k5YY?si=N-gZE1VaBMmAM1un))
 - Ben Thompson Stratechery Chatbot ([Web App](https://unofficial-stratechery-chatbot.streamlit.app/))
 - Can Data Make Me a Better Basketball Rebounder? ([Youtube](https://www.youtube.com/watch?v=fsCXGvJFfHI))
+- FirstMover: Get StreetEasy Notifications Before Anyone Else ([firstmovernyc.com](https://www.firstmovernyc.com/))
+- BookBlend: Spotify Blend for Goodreads Users ([bookblend.app](https://bookblend.app/))
 
 ### Some Great Blogs
 
