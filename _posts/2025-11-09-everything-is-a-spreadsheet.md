@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  Everything is Spreadsheet
+title:  Everything is a Spreadsheet
 date:   2025-11-09
 ---
 
