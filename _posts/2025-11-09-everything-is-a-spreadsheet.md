@@ -34,7 +34,7 @@ If our goal as technologists is to put the *creative* power of computing into th
 
 *This* is a foundation of data literacy. There- if anyone ever told to become more data literate, I just gave you a crash course.
 
-I've been thinking a lot about this concept for a couple reasons:
+I've been thinking a lot about this concept for a few reasons:
 
 - **Learning the basics.** It's not that deep. Every application is secretly a fancy Excel sheet. Whenever you're learning or communicating a new application, consider how you would rebuild it in a spreadsheet. The number of tabs relative to the number of formula is a good indicator of if their strategy is more breadth or depth. If the application asks you define your own tabs, it's [more of a platform](https://ben-mini.com/2024/what-is-a-platform).
 - **10x'ing vibe coding**. I can guarantee non-technical vibe coders that if they communicate their application needs like they're building an Excel sheet, they will 10x their effectiveness. Tell the AI what your nouns are, the actions they ought to do, and their relationship with one another.
