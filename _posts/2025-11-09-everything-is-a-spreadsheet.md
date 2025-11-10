@@ -2,6 +2,8 @@
 layout: single
 title:  Everything is a Spreadsheet
 date:   2025-11-09
+header:
+    og_image: "../assets/images/Arc 002222.png"
 ---
 
 Revisiting an old [2020 Invest Like the Best podcast](https://open.spotify.com/episode/0Ok2HlpJ06C8c2Wrhm8Nkv) that interviews John Collision, co-founder of Stripe. When asked about his thoughts on no-code:
