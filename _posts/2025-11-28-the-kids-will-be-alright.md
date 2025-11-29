@@ -1,11 +1,11 @@
 ---
 layout: single
-title: The Kids will be Alright
+title: The Kids Will Be Alright
 date: 2025-11-28
 ---
 After spending the holidays with my niece and nephews, I've reflected on a thought I know all of us have...
 
-I think the kids are going to be alright.
+I think the kids will be alright.
 
 For the first time in recent American history, I seriously don’t think parents have any idea what the fuck their kids should be doing with their lives. AI has threatened white collar career growth at levels we haven't seen since... maybe never? While automation has steadily replaced monotonous back-office work, AI’s creative engine is now stepping into higher-level “thought” work at unprecedented scale. So, what professions should children today be groomed for?
 
