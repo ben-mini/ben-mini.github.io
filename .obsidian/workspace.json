@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_drafts/next.md",
+                "file": "post_template/yyyy-mm-dd-the-title.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "next"
+              "title": "yyyy-mm-dd-the-title"
             }
           }
         ]
@@ -78,7 +78,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "9006a5e2d39d598d",
@@ -171,9 +172,12 @@
   },
   "active": "e326445cd584536e",
   "lastOpenFiles": [
-    "_drafts/2025-08-28.md",
+    "_drafts/2025-11-28-the-kids-will-be-alright.md",
+    "_posts/2025-11-28-the-kids-will-be-alright.md",
+    "post_template/yyyy-mm-dd-the-title.md",
+    "_posts/2023-12-13-the-meaning-of-life.md",
     "_drafts/next.md",
-    "post_template/Title.md",
+    "_drafts/2025-08-28.md",
     "_drafts/tough.md",
     "_posts/2025-06-14-trust-and-procedural-fetishism.md",
     "_posts/2024-06-09-old-school-business.md",
