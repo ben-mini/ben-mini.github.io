@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "post_template/yyyy-mm-dd-the-title.md",
+                "file": "_posts/2025-11-28-the-kids-will-be-alright.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "yyyy-mm-dd-the-title"
+              "title": "2025-11-28-the-kids-will-be-alright"
             }
           }
         ]
@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "9006a5e2d39d598d",
@@ -172,9 +171,9 @@
   },
   "active": "e326445cd584536e",
   "lastOpenFiles": [
+    "post_template/yyyy-mm-dd-the-title.md",
     "_drafts/2025-11-28-the-kids-will-be-alright.md",
     "_posts/2025-11-28-the-kids-will-be-alright.md",
-    "post_template/yyyy-mm-dd-the-title.md",
     "_posts/2023-12-13-the-meaning-of-life.md",
     "_drafts/next.md",
     "_drafts/2025-08-28.md",

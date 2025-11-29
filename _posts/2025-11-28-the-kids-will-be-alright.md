@@ -25,7 +25,7 @@ With this uncertainty, something amazing happened... things got weird. The draft
 > 
 > Later Jobs would complain about the new generation of kids, who seemed to him more materialistic and careerist than his own. “When I went to school, it was right after the sixties and before this general wave of practical purposefulness had set in,” he said. “Now students aren’t even thinking in idealistic terms, or at least nowhere near as much.” His generation, he said, was different. “The idealistic wind of the sixties is still at our backs, though, and most of the people I know who are my age have that ingrained in them forever.”
 
-Are we be underestimating what kind of counterculture will spawn from the AI era? Sure, kids have always rebelled against their parents... but somewhere in America right now, there's a kid saying, "no, Mom and Dad, I'm not becoming a lawyer" and she has a defensible rationale to back it up. That kid might end taking a path of *true* non-conformity- bringing something genuinely new into the world.
+Are we underestimating what kind of counterculture will spawn from the AI era? Sure, kids have always rebelled against their parents... but somewhere in America right now, there's a kid saying, "no, Mom and Dad, I'm not becoming a lawyer" and she has a defensible rationale to back it up. That kid might end up taking a path of *true* non-conformity- bringing something genuinely new into the world.
 
 As uncertainty grows, our usual cycle of rebellion will spike sharply and lastingly, as more brilliant, well-resourced young people take part, just like their great-grandparents did in the '70s.
 
