@@ -17,8 +17,8 @@ What's cool to me is how I built this. You'll be unsurprised to hear that most o
 
 - Claude Code for vibe coding
 - Vercel for hosting
-- [Convex](https://www.linkedin.com/company/convex-dev/) for db/auth/realtime sync (this product is awesome! I could write a whole post about it. It actually makes the *Bonus* entry realtime across all visitors, like a Google Doc.)
-- [BlockNote](https://www.linkedin.com/company/blocknote-rich-text-editor/) for an easy Notion-like editor
+- [Convex](https://www.convex.dev/) for db/auth/realtime sync (this product is awesome! I could write a whole post about it. It actually makes the *Bonus* entry realtime across all visitors, like a Google Doc.)
+- [BlockNote](https://www.blocknotejs.org/) for an easy Notion-like editor
 
 ### Perfect Software
 
