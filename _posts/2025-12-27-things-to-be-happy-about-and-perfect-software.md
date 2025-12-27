@@ -11,7 +11,7 @@ Back in college, I had a tiny whiteboard outside my dorm where I did the same ex
 
 [things.ben-mini.com](https://things.ben-mini.com/) is the same concept: I add my own five things every day, and *anyone on the internet* can add the *Bonus*. Just like the real world, anyone can add, append, or completely write over it. At midnight, the present the *Bonus* is locked- entering a readonly state with all prior entries.¹
 
-<img src="../assets/images/Arc 002989.png" alt="Arc 002989" style="zoom: 25%;" />
+<img src="../assets/images/Arc 002991.png" alt="Arc 002991" style="zoom:25%;" />
 
 What's cool to me is how I built this. You'll be unsurprised to hear that most of this was vibe coded. [Here's the Github](https://github.com/benfwalla/things-to-be-happy-about). The whole site, with a CRUD admin view, was built in a day:
 
