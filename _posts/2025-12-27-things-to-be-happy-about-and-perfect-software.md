@@ -3,7 +3,7 @@ layout: single
 title: Things to be Happy About & Perfect Software
 date: 2025-12-27
 ---
-Happy to share to a new project: Things to be Happy About - [things.ben-mini.com](https://things.ben-mini.com/). It's a daily blog where I simply write five things to be happy about. 
+Happy to share a new project: Things to be Happy About - [things.ben-mini.com](https://things.ben-mini.com/). It's a daily blog where I simply write five things to be happy about. 
 
 Back in college, I had a tiny whiteboard outside my dorm where I did the same exercise. I also brought it to my cabin as a camp counselor (below). I would always leave the marker out with a little "Bonus:" section, where any passerby could add what they wanted. Not to brag, but it was quite a hit!
 
