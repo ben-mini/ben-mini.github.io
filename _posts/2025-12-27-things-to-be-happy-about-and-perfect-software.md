@@ -9,7 +9,7 @@ Back in college, I had a tiny whiteboard outside my dorm where I did the same ex
 
 <img src="../assets/images/things_board.png" alt="things_board" style="zoom:33%;" />
 
-[things.ben-mini.com](https://things.ben-mini.com/) is the same concept: I add my own five things every day, and *anyone on the internet* can add the *Bonus*. Just like the real world, anyone can add, append, or completely write over it. At midnight, the present the *Bonus* is locked- entering a readonly state with all prior entries.¹
+[things.ben-mini.com](https://things.ben-mini.com/) is the same concept: I add my own five things every day, and *anyone on the internet* can add the *Bonus*. Just like the real world, anyone can add, append, or completely write over it. At midnight, the present *Bonus* is locked- entering a readonly state with all prior entries.¹
 
 <img src="../assets/images/Arc 002991.png" alt="Arc 002991" style="zoom:25%;" />
 
@@ -34,7 +34,7 @@ Last week, I read [Gaurav Ramesh's blog about Perfect Software](https://outofdes
 
 This revelation is so important and liberating to me. I've written a fair amount about my love of software (I plan to write more!). Vibe coding has reignited that love, as it's allowed me to explore projects like these- faster and better than ever.
 
-With that said, I don’t think Substack, or the broader SaaS market, is *dead*.² While Substack didn’t fit Gaurav’s or my needs, it has for a large denomination of writers. It’s also worth noting that Gaurav and I *sacrificed* Substack’s distribution advantages in exchange for more control over our publications. Still, I think we’re heading in the right direction, and SaaS will need to evolve to retain its users. I imagine SaaS companies beginning to launch **Lovable-like build modes**, with hosting, auth, and APIs already in context. Imagine a world where writers on Substack, sales teams on HubSpot, and healthcare workers on Kibu can all build interfaces that fit their own workflows.
+With that said, I don’t think Substack, or the broader SaaS market, is *dead*.² While Substack didn’t fit Gaurav’s or my needs, it has for a large denomination of writers. It’s also worth noting that Gaurav and I *sacrificed* Substack’s distribution advantages in exchange for more control over our publications. Still, I think he and I are heading in the right direction, and SaaS will need to evolve to retain its users. I imagine SaaS companies will begin to launch **Lovable-like build modes**, with hosting, auth, and APIs already in context. Imagine a world where writers on Substack, sales teams on HubSpot, and healthcare workers on Kibu can all build interfaces that fit their own workflows.
 
 SaaS will become less valuable for its UI and more for its opinionated, shared data layer. The winners in consumer SaaS will have data layers with the strongest distribution. In B2B, it’ll be the ones whose data layers produce trusted guardrails of compliance, reliability, and operational best practices.
 
