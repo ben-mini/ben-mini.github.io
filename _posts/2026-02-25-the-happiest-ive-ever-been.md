@@ -11,7 +11,7 @@ Indiana loves its basketball, so it was easy for me to find a local gym to play 
 
 Team drafted. 6 kids. 1 game per week. 2 practices per week. 14 parent emails (somehow). Practice starts tomorrow.
 
-You know those bullshit leadership positions we all had in high school and college? Like how you were "VP of Operations" for some club, and all you did was order pizza? Yeah, this was not that. Getting thrown into an empty gym with six kids and two basketballs is a thrilling experience! I'm so grateful my buddy Clayton joined me as co-coach. I spent the whole day preparing for that 2-hour practice, and I think it showed. We learned all each other's names, had a solid skills assessment, set some ground rules, and had some fun with a little knockout.
+You know those bullshit leadership positions we all had in high school and college? Like how you were "VP of Operations" for some club, and all you did was order pizza? Yeah, this was not that. Getting thrown into an empty gym with six kids and two basketballs is a thrilling experience! I'm so grateful my buddy Clayton joined me as co-coach. I spent the whole day preparing for that 2-hour practice, and I think it showed. We learned each other's names, had a solid skills assessment, set some ground rules, and had some fun with a little knockout.
 
 Here's the headline: I fucking loved being a coach. And, I don't want to brag, *but I was really good at it*. We lost one game, our first game, and went undefeated after that. But improving each kid's skill and confidence was the real mission. Instead of my desk job, I'd be asking Clayton how we could make Corey¹ use his body for rebounding. Or how Monte's soccer skills could be best leveraged. Or how Evan, our best player, could become an on-court leader. 
 
