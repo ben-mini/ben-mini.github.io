@@ -1,7 +1,6 @@
 ---
 layout: single
 title: The happiest I've ever been
-subtitle: subtitle
 date: 2026-02-25
 ---
 It was around January 2020. I became the head coach of a youth basketball team. 
