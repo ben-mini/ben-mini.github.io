@@ -144,7 +144,7 @@ p, ul, ol, h1, h2, h3, h4, h5, h6 {
   cursor: url('cursors/cursorText.svg') 7 13, auto; /* Center for 13x25 cursor */
 }
 
-a {
+a, a img {
   cursor: url('cursors/cursorPointer.svg') 3 0, auto; /* Top-left tip slightly to the right for 28x29 pointer cursor */
 }
 
