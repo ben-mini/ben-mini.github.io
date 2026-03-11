@@ -9,7 +9,7 @@ permalink: /subscribe/
 
 ---
 
-[<span style="font-size: 1.0625em;"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i>Subscribe via RSS</span>](https://ben-mini.com/feed.xml)
+[<span style="font-size: 1.0625em;">Subscribe via RSS</span>](https://ben-mini.com/feed.xml)
 
 <script>
   var d = document,

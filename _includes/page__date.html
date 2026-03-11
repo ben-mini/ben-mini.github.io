@@ -1,6 +1,15 @@
 {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+{% assign words_per_minute = page.words_per_minute | default: site.words_per_minute | default: 240 %}
+{% assign words = page.content | strip_html | number_of_words %}
+{% if words < words_per_minute %}
+  {% assign read_time = "less than 1 min read" %}
+{% elsif words == words_per_minute %}
+  {% assign read_time = "1 min read" %}
+{% else %}
+  {% capture read_time %}{{ words | divided_by: words_per_minute }} min read{% endcapture %}
+{% endif %}
 {% if page.last_modified_at %}
-  <p class="archive__item-date"><time class="dt-published" datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: date_format }}</time></p>
+  <p class="archive__item-date"><time class="dt-published" datetime="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{{ page.last_modified_at | date: date_format }}</time> &nbsp;&#8226;&nbsp; {{ read_time }} &nbsp;&#8226;&nbsp; <a href="https://x.com/DJbennyBuff" target="_blank" rel="noopener noreferrer" class="x-profile-pill"><img src="https://pbs.twimg.com/profile_images/2003937431800672256/1yFgGSqn_400x400.jpg" alt="Ben Wallace" class="x-profile-avatar" /><svg class="x-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="10" height="10"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="x-profile-handle">@DJbennyBuff</span></a></p>
 {% elsif page.date %}
-  <p class="archive__item-date"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time></p>
+  <p class="archive__item-date"><time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: date_format }}</time> &nbsp;&#8226;&nbsp; {{ read_time }} &nbsp;&#8226;&nbsp; <a href="https://x.com/DJbennyBuff" target="_blank" rel="noopener noreferrer" class="x-profile-pill"><img src="https://pbs.twimg.com/profile_images/2003937431800672256/1yFgGSqn_400x400.jpg" alt="Ben Wallace" class="x-profile-avatar" /><svg class="x-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="10" height="10"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg><span class="x-profile-handle">@DJbennyBuff</span></a></p>
 {% endif %}

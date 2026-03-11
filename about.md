@@ -17,10 +17,10 @@ Oh, and my logo was inspired by the iPhone game [Cube Runner](https://www.reddit
 *AI Disclaimer: All ideas written in my articles are my own unless otherwise stated. Generative AI tools are used occasionally to improve grammar and structure.*
 
 ### Links
-- <i class="fas fa-fw fa-link" aria-hidden="true"></i> [Portfolio & Resume](https://ben-wallace.replit.app/)
-- <i class="fab fa-fw fa-linkedin-in" aria-hidden="true"></i> [LinkedIn](https://www.linkedin.com/in/benfwall/)
-- <i class="fa-brands fa-x-twitter" aria-hidden="true"></i> [@DJbennybuff](https://twitter.com/DJbennybuff)
-- <i class="fab fa-fw fa-github" aria-hidden="true"></i> [GitHub](https://github.com/benfwalla)
+- [Portfolio & Resume](https://ben-wallace.replit.app/)
+- [LinkedIn](https://www.linkedin.com/in/benfwall/)
+- [@DJbennyBuff](https://x.com/DJbennyBuff)
+- [GitHub](https://github.com/benfwalla)
 
 ### Some Projects
 - Which NYC Grocery Store Is Cheapest? ([YouTube](https://youtu.be/io8bf9-k5YY?si=N-gZE1VaBMmAM1un))

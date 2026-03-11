@@ -14,3 +14,4 @@ gem "github-pages", group: :jekyll_plugins
 gem "jekyll-include-cache", group: :jekyll_plugins
 gem "jekyll-target-blank", group: :jekyll_plugins
 gem "webrick", "~> 1.8"
+gem "minimal-mistakes-jekyll"
