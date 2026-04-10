@@ -7,11 +7,11 @@ header:
 ---
 Consider the "nouns" the live inside an app of your choice:
 
-![[nouns.png]]
+<img src="../assets/images/nouns.png" alt="nouns" />
 
 You can spend *hours* building a list for just one app. But the more interesting exercise is *weighting* the nouns by impact in the app- considering which ones have the most "gravity" from the eyes of the user:
 
-![[nucleus-nouns.png]]
+<img src="../assets/images/nucleus-nouns.png" alt="nucleus-nouns" />
 
 You quickly realize that most apps, even the multi-billion dollar ones, revolve around one or two nouns- I like calling these **nucleus nouns**. Every other noun is a "satellite".
 
