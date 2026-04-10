@@ -5,7 +5,7 @@ date: 2026-04-10
 header:
     og_image: "../assets/images/nouns.png"
 ---
-Consider the "nouns" the live inside an app of your choice:
+Consider the "nouns" that live inside an app of your choice:
 
 <img src="../assets/images/nouns.png" alt="nouns" />
 
