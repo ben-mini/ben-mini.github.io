@@ -5,3 +5,7 @@ _site
 vendor
 
 _drafts/
+
+.claude
+
+.obsidian
