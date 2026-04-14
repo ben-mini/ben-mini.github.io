@@ -35,6 +35,9 @@ $active-color: mix(#fff, $primary-color, 80%) !default;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}"; // skin
 @import "minimal-mistakes"; // main partials
 
+// Disable the theme's fade-in intro animation to prevent flash between pages
+@keyframes intro { 0% { opacity: 1; } }
+
 // Nav bar
 .greedy-nav .visible-links a:before {
   background: $info-color;
