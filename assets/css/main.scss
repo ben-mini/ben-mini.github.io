@@ -2,8 +2,7 @@
 
 ---
 
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
-
+// Noto Sans is loaded via <link> in _includes/head/custom.html for faster rendering
 $sans-serif: 'Noto Sans', -apple-system, BlinkMacSystemFont, Arial, sans-serif !default;
 $serif: $sans-serif;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;

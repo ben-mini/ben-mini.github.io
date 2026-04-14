@@ -1,6 +1,12 @@
 <!-- start custom head snippets -->
 <!-- Icons are inline SVGs via _includes/icon.html -->
 
+<!-- Preconnect to Google Fonts to reduce latency -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Load Noto Sans early via link tag instead of CSS @import -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
 <!-- insert favicons. use https://realfavicongenerator.net/ -->
 <link rel="shortcut icon" href="{{ "/assets/images/favicon.ico" | relative_url }}">
 <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/images/apple-touch-icon.png" | relative_url }}">
