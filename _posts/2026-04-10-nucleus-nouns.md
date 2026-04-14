@@ -30,6 +30,9 @@ When starting a new project, list out the nouns with your team. Then, consider t
 - Are any **satellite** nouns introduced? If so, alright, let's consider its relationships, UX, and see if the business value justifies these new nouns.
 - Are any **nucleus** nouns introduced? If so, stop everything. Call in the CEO. Rip out the ayahuasca. This decision could change everything.
 
-I'm reminded of [Dylan Fields' reflection](https://www.lennysnewsletter.com/p/why-ai-makes-design-craft-and-quality-the-new-moat) of Figma's release of Figjam: its second product behind its flagship "Design" offering. For an ambitious tech executive, Dylan was awfully pensive about working on a second product (Figjam was released 9 years after Figma's creation in 2012). I think it was the recognition that a new nucleus creates inertia: huge upside if it works, but at what cost?
+I'm reminded of [Dylan Fields' reflection](https://www.lennysnewsletter.com/p/why-ai-makes-design-craft-and-quality-the-new-moat) of Figma's release of Figjam: its second product behind its flagship "Design" offering. For an ambitious tech executive, Dylan was awfully pensive about working on a second product (Figjam was released 9 years after Figma's creation in 2012). I think it was the recognition that a new nucleus creates inertia¹: huge upside if it works, but at what cost?
 
 I'm optimistic in the apps that maintain a uni- or duo-nucleus nouns strategy. Resend is *nailing* email automation. Plaid is *nailing* bank linking. To me, this is *craft*: having the discipline to stick to your nucleus noun and go mega vertical with it. Explore all its quirks and edge cases. Honestly, **I think this is the most likely way to win in the SaaSpocalypse**. Being "okay" at a lot of things won't cut it anymore. Your market can vibecode "okay" in a weekend. Craft, focus, and expertise are your moats. I guess some things don't change.
+
+---
+¹ Shoutout [Three-Body Problem](https://en.wikipedia.org/wiki/Three-body_problem)!
