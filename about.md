@@ -19,8 +19,8 @@ Oh, and my logo was inspired by the iPhone game [Cube Runner](https://www.reddit
 ### Links
 - [Portfolio & Resume](https://ben-wallace.replit.app/)
 - [LinkedIn](https://www.linkedin.com/in/benfwall/)
-- [@DJbennyBuff](https://x.com/DJbennyBuff)
-- [GitHub](https://github.com/benfwalla)
+- [X - @DJbennyBuff](https://x.com/DJbennyBuff)
+- [GitHub - benfwalla](https://github.com/benfwalla)
 
 ### Some Projects (way more on my Github 👆)
 
