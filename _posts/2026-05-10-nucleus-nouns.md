@@ -1,7 +1,7 @@
 ---
 layout: single
 title: Nucleus Nouns
-date: 2026-04-10
+date: 2026-05-10
 header:
     og_image: "../assets/images/nouns.png"
 ---
