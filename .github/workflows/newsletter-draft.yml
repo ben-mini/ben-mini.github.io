@@ -1,0 +1,77 @@
+name: Create Resend draft
+
+# Push a new post -> a Resend DRAFT broadcast is created for it (never auto-sent).
+# Review the draft in the Resend dashboard, then hit Send there.
+#
+# Requires these repo secrets (Settings -> Secrets and variables -> Actions):
+#   RESEND_API_KEY      (full access key)
+#   RESEND_AUDIENCE_ID  (your segment id)
+#   RESEND_FROM         e.g.  ben-mini <ben@ben-mini.com>
+#   RESEND_REPLY_TO     (optional)
+
+on:
+  # Manual run for any post (defaults to the latest one)
+  workflow_dispatch:
+    inputs:
+      post:
+        description: "Post slug/filename, or 'latest'"
+        default: latest
+        required: true
+  # Auto: only when a post file is added/changed on gh-pages
+  push:
+    branches: ["gh-pages"]
+    paths: ["_posts/**"]
+
+# Don't pile up overlapping runs
+concurrency:
+  group: resend-draft
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # need history to diff added files
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Decide which posts to draft
+        id: pick
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "list=${{ github.event.inputs.post }}" >> "$GITHUB_OUTPUT"
+          else
+            BEFORE='${{ github.event.before }}'
+            # On a brand-new branch 'before' is all-zeros; fall back to the previous commit.
+            if ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
+              BEFORE=$(git rev-parse HEAD~1 2>/dev/null || git rev-parse HEAD)
+            fi
+            ADDED=$(git diff --name-status "$BEFORE" "${{ github.sha }}" -- _posts \
+                    | awk '$1=="A"{print $2}' | xargs -n1 -I{} basename {} | tr '\n' ' ')
+            echo "Newly added posts: ${ADDED:-(none)}"
+            echo "list=$ADDED" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create Resend draft(s)
+        if: steps.pick.outputs.list != ''
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
+          RESEND_FROM: ${{ secrets.RESEND_FROM }}
+          RESEND_REPLY_TO: ${{ secrets.RESEND_REPLY_TO }}
+        run: |
+          for p in ${{ steps.pick.outputs.list }}; do
+            echo "::group::Draft for $p"
+            node send.js "$p"
+            echo "::endgroup::"
+          done
+
+      - name: Nothing to do
+        if: steps.pick.outputs.list == ''
+        run: echo "No newly added posts in this push — no draft created."
