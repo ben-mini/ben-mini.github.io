@@ -45,33 +45,43 @@ jobs:
         id: pick
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "list=${{ github.event.inputs.post }}" >> "$GITHUB_OUTPUT"
+            # Manual run: create-or-update a draft for the requested post.
+            echo "created=${{ github.event.inputs.post }}" >> "$GITHUB_OUTPUT"
+            echo "updated=" >> "$GITHUB_OUTPUT"
           else
             BEFORE='${{ github.event.before }}'
             # On a brand-new branch 'before' is all-zeros; fall back to the previous commit.
             if ! git cat-file -e "${BEFORE}^{commit}" 2>/dev/null; then
               BEFORE=$(git rev-parse HEAD~1 2>/dev/null || git rev-parse HEAD)
             fi
-            ADDED=$(git diff --name-status "$BEFORE" "${{ github.sha }}" -- _posts \
-                    | awk '$1=="A"{print $2}' | xargs -n1 -I{} basename {} | tr '\n' ' ')
-            echo "Newly added posts: ${ADDED:-(none)}"
-            echo "list=$ADDED" >> "$GITHUB_OUTPUT"
+            DIFF=$(git diff --name-status "$BEFORE" "${{ github.sha }}" -- _posts)
+            ADDED=$(echo "$DIFF" | awk '$1=="A"{print $2}' | xargs -n1 -I{} basename {} 2>/dev/null | tr '\n' ' ')
+            MODIFIED=$(echo "$DIFF" | awk '$1=="M"{print $2}' | xargs -n1 -I{} basename {} 2>/dev/null | tr '\n' ' ')
+            echo "Added (create draft): ${ADDED:-(none)}"
+            echo "Modified (refresh existing draft only): ${MODIFIED:-(none)}"
+            echo "created=$ADDED" >> "$GITHUB_OUTPUT"
+            echo "updated=$MODIFIED" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Create Resend draft(s)
-        if: steps.pick.outputs.list != ''
+      - name: Create / update Resend draft(s)
+        if: steps.pick.outputs.created != '' || steps.pick.outputs.updated != ''
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           RESEND_AUDIENCE_ID: ${{ secrets.RESEND_AUDIENCE_ID }}
           RESEND_FROM: ${{ secrets.RESEND_FROM }}
           RESEND_REPLY_TO: ${{ secrets.RESEND_REPLY_TO }}
         run: |
-          for p in ${{ steps.pick.outputs.list }}; do
-            echo "::group::Draft for $p"
+          for p in ${{ steps.pick.outputs.created }}; do
+            echo "::group::Create/update draft for $p"
             node send.js "$p"
+            echo "::endgroup::"
+          done
+          for p in ${{ steps.pick.outputs.updated }}; do
+            echo "::group::Refresh draft (if any) for $p"
+            node send.js "$p" --update-only
             echo "::endgroup::"
           done
 
       - name: Nothing to do
-        if: steps.pick.outputs.list == ''
-        run: echo "No newly added posts in this push — no draft created."
+        if: steps.pick.outputs.created == '' && steps.pick.outputs.updated == ''
+        run: echo "No added or modified posts in this push — nothing to do."

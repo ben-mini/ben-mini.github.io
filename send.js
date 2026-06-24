@@ -10,9 +10,15 @@
  *   1. cp .env.example .env   and fill in the values
  *   2. Node 18+ (uses built-in fetch). No npm install needed.
  *
+ * Upsert by name: each broadcast is tagged with the post filename. If a DRAFT
+ * with that name already exists it's updated in place (so a typo-fix recommit
+ * refreshes the same draft instead of making a duplicate). Sent broadcasts are
+ * never touched.
+ *
  * Usage:
- *   node send.js <post>            # build + create a DRAFT broadcast in Resend (review there)
- *   node send.js <post> --send     # build + create + SEND immediately
+ *   node send.js <post>            # create OR update the DRAFT broadcast (review in Resend)
+ *   node send.js <post> --send     # create/update + SEND immediately
+ *   node send.js <post> --update-only  # only refresh an existing draft; skip if none exists
  *   node send.js <post> --dry      # build only, write .preview.html, never touch Resend
  *   node send.js <post> --subject "Custom subject line"
  *
@@ -65,6 +71,13 @@ async function resend(method, endpoint, body) {
   const text = await res.text();
   let json; try { json = text ? JSON.parse(text) : {}; } catch (_) { json = { raw: text }; }
   return { ok: res.ok, status: res.status, json };
+}
+
+// Find an existing DRAFT broadcast with this name (sent ones are left alone).
+async function findDraft(name) {
+  const r = await resend("GET", "/broadcasts");
+  if (!r.ok || !Array.isArray(r.json.data)) return null;
+  return r.json.data.find(b => b.name === name && b.status === "draft") || null;
 }
 
 // Resend is mid-rename Audiences -> Segments. Try audience_id, fall back to segment_id.
@@ -122,8 +135,22 @@ async function createBroadcast(base) {
   };
   if (process.env.RESEND_REPLY_TO) base.reply_to = process.env.RESEND_REPLY_TO;
 
-  const { id, field } = await createBroadcast(base);
-  console.log("\n✓ Broadcast created (" + field + "): " + id);
+  const updateOnly = flags.has("--update-only");
+  let id;
+  const existing = await findDraft(base.name);
+  if (existing) {
+    const u = await resend("PATCH", "/broadcasts/" + existing.id, base);
+    if (!u.ok) die("Update failed (" + u.status + "): " + JSON.stringify(u.json, null, 2));
+    id = existing.id;
+    console.log("\n✓ Updated existing draft: " + id);
+  } else if (updateOnly) {
+    console.log("\n• No existing draft named '" + base.name + "' — nothing to update, skipping.\n");
+    return;
+  } else {
+    const created = await createBroadcast(base);
+    id = created.id;
+    console.log("\n✓ Broadcast created (" + created.field + "): " + id);
+  }
 
   if (!doSend) {
     console.log("  Draft is in your Resend dashboard — review it, then either");
