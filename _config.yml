@@ -176,6 +176,7 @@ exclude:
   - /test # ignore Minimal Mistakes /test
   - send.js # node-only newsletter sender (keep formatter.js — the web tool loads it)
   - .env.example
+  - subscribe-worker # cloudflare worker for the /subscribe form (deployed separately)
 keep_files:
   - .git
   - .svn

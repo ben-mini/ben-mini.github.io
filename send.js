@@ -1,31 +1,17 @@
 #!/usr/bin/env node
 /*
- * send.js — send a ben-mini post as a Resend broadcast.
+ * send.js — publish a ben-mini post as a Resend broadcast.
  *
- * Reads a post from ./_posts, builds the email with formatter.js (same output
- * as the web preview), and creates a Resend Broadcast to your audience. The
- * unsubscribe link is Resend's managed merge tag, so unsubscribes are automatic.
- *
- * Setup (one time):
- *   1. cp .env.example .env   and fill in the values
- *   2. Node 18+ (uses built-in fetch). No npm install needed.
- *
- * Upsert by name: each broadcast is tagged with the post filename. If a DRAFT
- * with that name already exists it's updated in place (so a typo-fix recommit
- * refreshes the same draft instead of making a duplicate). Sent broadcasts are
- * never touched.
+ * Builds the email with formatter.js, then creates (or updates) a DRAFT
+ * broadcast keyed by the post filename, so re-running refreshes the same draft
+ * instead of duplicating it. Needs Node 18+ and a .env (see .env.example).
  *
  * Usage:
- *   node send.js <post>            # create OR update the DRAFT broadcast (review in Resend)
- *   node send.js <post> --send     # create/update + SEND immediately
- *   node send.js <post> --update-only  # only refresh an existing draft; skip if none exists
- *   node send.js <post> --dry      # build only, write .preview.html, never touch Resend
- *   node send.js <post> --subject "Custom subject line"
- *
- *   <post> can be a filename or just a slug, e.g.:
- *     node send.js 2026-06-24-stealing-is-a-skill.md
- *     node send.js stealing-is-a-skill
- *     node send.js latest            # most recent post by date
+ *   node send.js <post|slug|latest>      create/update the draft
+ *   node send.js <post> --send           create/update, then send
+ *   node send.js <post> --update-only    refresh an existing draft, else skip
+ *   node send.js <post> --dry            build .preview.html only, skip Resend
+ *   node send.js <post> --subject "..."  override the subject
  */
 
 const fs = require("fs");
@@ -35,7 +21,6 @@ const Formatter = require("./formatter.js");
 const POSTS_DIR = path.join(__dirname, "_posts");
 const API = "https://api.resend.com";
 
-/* ---------- tiny .env loader (no dependency) ---------- */
 function loadEnv() {
   const p = path.join(__dirname, ".env");
   if (!fs.existsSync(p)) return;
@@ -49,7 +34,6 @@ function loadEnv() {
 
 function die(msg) { console.error("\n✗ " + msg + "\n"); process.exit(1); }
 
-/* ---------- resolve which post ---------- */
 function resolvePost(arg) {
   if (!fs.existsSync(POSTS_DIR)) die("No _posts directory found at " + POSTS_DIR);
   const all = fs.readdirSync(POSTS_DIR).filter(f => /\.(md|markdown)$/i.test(f)).sort();
@@ -61,7 +45,6 @@ function resolvePost(arg) {
   return hit;
 }
 
-/* ---------- Resend REST ---------- */
 async function resend(method, endpoint, body) {
   const res = await fetch(API + endpoint, {
     method,
@@ -87,7 +70,6 @@ async function createBroadcast(base) {
     const r = await resend("POST", "/broadcasts", Object.assign({ [field]: targetId }, base));
     if (r.ok) return { id: r.json.id, field };
     const err = JSON.stringify(r.json).toLowerCase();
-    // only retry with the other field name if this one was the problem
     if (!/audience|segment|unknown|invalid|not found/.test(err)) {
       die("Resend error (" + r.status + "): " + JSON.stringify(r.json, null, 2));
     }
@@ -96,7 +78,6 @@ async function createBroadcast(base) {
       "Find the ID in the Resend dashboard under Audiences (or Segments).");
 }
 
-/* ---------- main ---------- */
 (async function main() {
   loadEnv();
   const args = process.argv.slice(2);
@@ -128,10 +109,10 @@ async function createBroadcast(base) {
   }
 
   const base = {
-    from: process.env.RESEND_FROM,                 // e.g. "ben-mini <ben@ben-mini.com>"
+    from: process.env.RESEND_FROM,
     subject,
     html: email.inner,
-    name: file.replace(/\.(md|markdown)$/i, ""),   // internal label in Resend dashboard
+    name: file.replace(/\.(md|markdown)$/i, ""), // also the upsert key in findDraft()
   };
   if (process.env.RESEND_REPLY_TO) base.reply_to = process.env.RESEND_REPLY_TO;
 

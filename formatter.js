@@ -7,9 +7,8 @@
   var LOGO = "https://ben-mini.com/assets/images/ben-mini-full.png";
   var SITE = "https://ben-mini.com";
   var IMG_BASE = SITE + "/assets/images/";
-  var TALLY_UNSUB = "https://tally.so/r/w4PVQr"; // fallback for the copy/paste path
+  var TALLY_UNSUB = "https://tally.so/r/w4PVQr"; // copy/paste path only; broadcasts pass Resend's merge tag
 
-  /* ---------- helpers ---------- */
   function slugify(t) {
     return (t || "").toLowerCase().replace(/[‘’']/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
@@ -45,7 +44,6 @@
     return h;
   }
 
-  /* ---------- front matter ---------- */
   function parseFrontMatter(src) {
     var meta = {}, body = src;
     var fm = src.match(/^\s*---\s*\n([\s\S]*?)\n---\s*\n?/);
@@ -62,7 +60,6 @@
     return { meta: meta, body: body };
   }
 
-  /* ---------- markdown ---------- */
   function inline(t) {
     t = t.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g, function (_, a, s) {
       return '<img src="' + fixImg(s) + '" alt="' + a + '" style="display:block;margin:0 auto;max-width:100%;height:auto;border-radius:6px;">';
@@ -94,7 +91,6 @@
     return out.join("\n");
   }
 
-  /* ---------- compose ---------- */
   function permalink(meta, filename) {
     var ff = fromFilename(filename);
     var year = (ff && ff.year) || fmtDate(meta.date).year || "";
@@ -124,8 +120,6 @@
       + '<body style="margin:0;padding:0;background-color:#e8f6e4;">\n' + inner + "\n</body></html>";
   }
 
-  /* ---------- public ---------- */
-  // opts: { filename, unsubscribeUrl }
   function buildEmail(markdown, opts) {
     opts = opts || {};
     var parsed = parseFrontMatter(markdown);
@@ -150,6 +144,6 @@
     RESEND_UNSUBSCRIBE: "{{{RESEND_UNSUBSCRIBE_URL}}}"
   };
 
-  if (typeof module !== "undefined" && module.exports) module.exports = api; // Node
-  else root.Formatter = api;                                                // browser
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+  else root.Formatter = api;
 })(typeof self !== "undefined" ? self : this);
