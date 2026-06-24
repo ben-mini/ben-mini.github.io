@@ -135,7 +135,7 @@
     return {
       meta: parsed.meta,
       title: parsed.meta.title || "Untitled",
-      subject: parsed.meta.title || "Untitled",
+      subject: "ben-mini: " + (parsed.meta.title || "Untitled"),
       url: url,
       inner: inner,
       full: fullDoc(inner)
