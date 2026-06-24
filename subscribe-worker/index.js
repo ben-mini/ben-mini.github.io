@@ -91,7 +91,7 @@ async function addContact(env, email, first_name) {
     const text = await res.text();
     if (/already|duplicate|exists/i.test(text)) return { ok: true, already: true };
     last = { status: res.status, error: friendly(res.status) };
-    if (res.status === 401 || res.status === 403) break; // auth is broken; no point retrying
+    if (res.status === 401 || res.status === 403) break; // auth is broken, no point retrying
   }
   return { ok: false, ...last };
 }
