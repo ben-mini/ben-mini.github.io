@@ -206,7 +206,7 @@ async function loadList(){
     postEl.innerHTML="";
     files.forEach(name=>{
       const ff=fromFilename(name),o=document.createElement("option");
-      o.value=name;o.textContent=ff?`${shortDate(ff.date)}  —  ${ff.slug}`:name;
+      o.value=name;o.textContent=ff?`${shortDate(ff.date)} - ${ff.slug}`:name;
       postEl.appendChild(o);
     });
     setStatus(files.length+" posts");
