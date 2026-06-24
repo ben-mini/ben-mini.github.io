@@ -13,7 +13,7 @@ permalink: /subscribe/
   <p id="sub-msg" role="status" aria-live="polite"></p>
 
   <p class="sub-label sub-label--rss">Subscribe by RSS</p>
-  <p class="sub-rss"><a href="https://ben-mini.com/feed.xml">ben-mini.com/feed.xml →</a></p>
+  <p class="sub-rss"><button id="rss-copy" type="button">https://ben-mini.com/feed.xml</button><span id="rss-copied"></span></p>
 </div>
 
 <style>
@@ -43,7 +43,13 @@ permalink: /subscribe/
   #sub-msg.ok { color: #3a9329; }
   #sub-msg.err { color: #b3261e; }
 
-  .sub-rss { margin: 0; font-size: .95em; }
+  .sub-rss { margin: 0; font-size: .95em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  #rss-copy {
+    font: inherit; color: #4bae34; background: none; border: 0; padding: 0; cursor: pointer;
+    text-decoration: underline; text-underline-offset: 2px;
+  }
+  #rss-copy:hover { color: #3a9329; }
+  #rss-copied { font-size: .85em; color: #3a9329; }
 
   @media (max-width: 460px) {
     #subscribe-form { flex-wrap: wrap; }
@@ -86,6 +92,15 @@ permalink: /subscribe/
         })
         .catch(function () { setMsg("Network error — please try again.", "err"); })
         .finally(function () { btn.disabled = false; });
+    });
+
+    var rss = document.getElementById("rss-copy");
+    var rssMsg = document.getElementById("rss-copied");
+    rss.addEventListener("click", function () {
+      navigator.clipboard.writeText("https://ben-mini.com/feed.xml").then(function () {
+        rssMsg.textContent = "Copied!";
+        setTimeout(function () { rssMsg.textContent = ""; }, 1500);
+      }).catch(function () { rssMsg.textContent = "Press ⌘C to copy"; });
     });
   })();
 </script>
