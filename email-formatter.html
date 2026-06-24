@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ben-mini email formatter</title>
+<style>
+  :root{
+    --green:#4bae34;--green-d:#3a9329;--page:#e8f6e4;--ink:#1f2421;
+    --muted:#6b7670;--line:#e2e6e1;--bg:#fafdf8;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;line-height:1.45}
+  header.bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 20px;
+    border-bottom:1px solid var(--line);background:#fff;position:sticky;top:0;z-index:20;flex-wrap:wrap}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:-.01em}
+  .brand .dot{width:11px;height:11px;border-radius:50%;background:var(--green)}
+  .brand small{font-weight:500;color:var(--muted);font-size:12px}
+  .actions{display:flex;gap:8px;flex-wrap:wrap}
+  button{font:inherit;font-size:13px;font-weight:600;cursor:pointer;border-radius:8px;padding:9px 14px;
+    border:1px solid var(--line);background:#fff;color:var(--ink);
+    transition:transform .04s ease,background .12s ease,border-color .12s ease}
+  button:hover{border-color:#cdd4cd}
+  button:active{transform:translateY(1px)}
+  button.primary{background:var(--green);border-color:var(--green);color:#fff}
+  button.primary:hover{background:var(--green-d);border-color:var(--green-d)}
+  button.icon{padding:9px 11px}
+  .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);height:calc(100vh - 60px);min-height:480px}
+  @media(max-width:880px){.wrap{grid-template-columns:1fr;height:auto}}
+  .pane{display:flex;flex-direction:column;min-width:0;min-height:0}
+  .pane.left{border-right:1px solid var(--line)}
+  @media(max-width:880px){.pane.left{border-right:0;border-bottom:1px solid var(--line)}}
+  .pane-head{padding:10px 16px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;
+    color:var(--muted);border-bottom:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .controls{padding:14px 16px;display:flex;flex-direction:column;gap:12px;border-bottom:1px solid var(--line);background:#fff}
+  .field label{display:block;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:5px}
+  .field .row{display:flex;gap:8px;align-items:center}
+  select,input[type=text]{width:100%;font:inherit;font-size:13px;padding:9px 11px;border:1px solid var(--line);
+    border-radius:8px;background:#fff;color:var(--ink)}
+  select:focus,input[type=text]:focus,textarea:focus{outline:none;border-color:var(--green);box-shadow:0 0 0 3px rgba(75,174,52,.13)}
+  .hint{font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}
+  .hint code{background:#eef3ec;padding:1px 5px;border-radius:4px}
+  .pill{font-size:11px;font-weight:600;color:var(--green-d);background:#eaf6e6;border:1px solid #cfe9c6;border-radius:999px;padding:2px 9px}
+  .pill.warn{color:#a86b00;background:#fff6e6;border-color:#f0dca6}
+  textarea#md{flex:1;min-height:220px;width:100%;border:0;padding:16px;resize:none;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;line-height:1.6;color:var(--ink);background:#fff}
+  textarea#md:focus{outline:none}
+  .preview-scroll{flex:1;overflow:auto;background:var(--page);padding:22px 16px}
+  #toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;
+    padding:11px 18px;border-radius:10px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;
+    transition:all .22s ease;z-index:50;box-shadow:0 8px 30px rgba(0,0,0,.22)}
+  #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  #toast.err{background:#b3261e}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="brand"><span class="dot"></span> ben-mini email formatter <small>markdown → Gmail-ready</small></div>
+  <div class="actions">
+    <button class="primary" id="copyGmail">Copy for Gmail</button>
+    <button id="copyHtml">Copy HTML</button>
+    <button id="download">Download .html</button>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="pane left">
+    <div class="pane-head">
+      <span>Choose a post</span>
+      <span class="pill" id="status">loading…</span>
+    </div>
+    <div class="controls">
+      <div class="field">
+        <label for="post">Post (newest first, from GitHub)</label>
+        <div class="row">
+          <select id="post"><option>Loading posts…</option></select>
+          <button class="icon" id="refresh" title="Reload list from GitHub">↻</button>
+        </div>
+      </div>
+      <div class="field">
+        <label for="url">Post URL <span id="urlAuto" style="color:var(--green-d)">(auto)</span></label>
+        <div class="row">
+          <input type="text" id="url" autocomplete="off" spellcheck="false">
+          <button class="icon" id="reAuto" title="Recompute from filename/title">↻</button>
+        </div>
+        <div class="hint">Auto-built from the real filename, so it always matches your Jekyll permalink. Edit if you ever need to.</div>
+      </div>
+    </div>
+    <textarea id="md" spellcheck="false" placeholder="Pick a post above, or paste markdown (with --- front matter ---) here."></textarea>
+  </section>
+
+  <section class="pane">
+    <div class="pane-head"><span>Email preview</span><span id="metaLine" style="font-weight:500;text-transform:none;letter-spacing:0"></span></div>
+    <div class="preview-scroll"><div id="preview"></div></div>
+  </section>
+</div>
+
+<div id="toast"></div>
+
+<script>
+const REPO="ben-mini/ben-mini.github.io";   // canonical repo
+const BRANCH="gh-pages";
+const POSTS="_posts";
+const GREEN="#4bae34";
+const LOGO="https://ben-mini.com/assets/images/ben-mini-full.png";
+const UNSUB="https://tally.so/r/w4PVQr";
+const IMG_BASE="https://ben-mini.com/assets/images/";
+
+const $=s=>document.querySelector(s);
+const mdEl=$("#md"),urlEl=$("#url"),postEl=$("#post");
+let urlEdited=false, currentFilename="";
+
+/* ---------- helpers ---------- */
+function slugify(t){return (t||"").toLowerCase().replace(/[‘’']/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");}
+function fromFilename(f){const n=(f||"").replace(/\.(md|markdown)$/i,"");const m=n.match(/^(\d{4})-(\d{2})-(\d{2})-(.+)$/);return m?{year:m[1],date:`${m[1]}-${m[2]}-${m[3]}`,slug:m[4]}:null;}
+function fmtDate(raw){const m=(raw||"").match(/^(\d{4})-(\d{2})-(\d{2})/);if(!m)return{pretty:"",year:""};const mo=["January","February","March","April","May","June","July","August","September","October","November","December"];return{pretty:`${mo[+m[2]-1]} ${(+m[3])}, ${m[1]}`,year:m[1]};}
+function shortDate(raw){const m=(raw||"").match(/^(\d{4})-(\d{2})-(\d{2})/);if(!m)return"";const mo=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];return`${mo[+m[2]-1]} ${(+m[3])}, ${m[1]}`;}
+function fixImg(s){s=s.trim();if(/^https?:\/\//i.test(s))return s;return s.replace(/^\.\.\/assets\/images\//,IMG_BASE).replace(/^\/?assets\/images\//,IMG_BASE).replace(/^\.\.\//,"https://ben-mini.com/").replace(/^\//,"https://ben-mini.com/");}
+function fixHref(h){h=h.trim();if(/^(https?:|mailto:|#)/i.test(h))return h;if(h.startsWith("/"))return "https://ben-mini.com"+h;return h;}
+
+/* ---------- front matter ---------- */
+function parse(src){
+  let meta={},body=src;
+  const fm=src.match(/^\s*---\s*\n([\s\S]*?)\n---\s*\n?/);
+  if(fm){body=src.slice(fm[0].length);let cur=null;
+    fm[1].split("\n").forEach(line=>{
+      const top=line.match(/^([A-Za-z0-9_]+):\s*(.*)$/),nest=line.match(/^\s+([A-Za-z0-9_]+):\s*(.*)$/);
+      if(top){cur=top[1];meta[top[1]]=top[2].replace(/^["']|["']$/g,"").trim();}
+      else if(nest&&cur){meta[cur+"."+nest[1]]=nest[2].replace(/^["']|["']$/g,"").trim();}
+    });}
+  return {meta,body};
+}
+
+/* ---------- markdown ---------- */
+function inline(t){
+  t=t.replace(/!\[([^\]]*)\]\(([^)\s]+)\)/g,(_,a,s)=>`<img src="${fixImg(s)}" alt="${a}" style="display:block;margin:0 auto;max-width:100%;height:auto;border-radius:6px;">`);
+  t=t.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g,(_,x,h)=>`<a href="${fixHref(h)}" target="_blank" style="color:${GREEN};text-decoration:underline;">${x}</a>`);
+  t=t.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
+  t=t.replace(/(^|[^*])\*([^*\n]+)\*/g,"$1<em>$2</em>");
+  t=t.replace(/`([^`]+)`/g,'<code style="background:#eef3ec;padding:1px 5px;border-radius:4px;font-size:.9em;">$1</code>');
+  return t;
+}
+function mdToHtml(src){
+  const lines=src.replace(/\r/g,"").split("\n");let out=[],i=0;
+  const flushP=b=>{if(b.length)out.push(`<p style="margin:0 0 18px;">${inline(b.join(" "))}</p>`);};
+  while(i<lines.length){
+    let line=lines[i];
+    if(/^\s*$/.test(line)){i++;continue;}
+    if(/^\s*(-{3,}|\*{3,})\s*$/.test(line)){out.push(`<hr style="border:0;border-top:1px solid ${GREEN};margin:24px 0;">`);i++;continue;}
+    let h=line.match(/^(#{1,6})\s+(.*)$/);
+    if(h){const lv=h[1].length,sz=[26,22,19,17,16,15][lv-1];out.push(`<h${lv} style="font-size:${sz}px;line-height:1.3;margin:24px 0 10px;color:#222;">${inline(h[2])}</h${lv}>`);i++;continue;}
+    if(/^\s*>/.test(line)){let b=[];while(i<lines.length&&/^\s*>/.test(lines[i])){b.push(lines[i].replace(/^\s*>\s?/,""));i++;}out.push(`<blockquote style="border-left:4px solid ${GREEN};padding:2px 0 2px 14px;margin:18px 0;font-style:italic;color:#555;">${inline(b.join(" "))}</blockquote>`);continue;}
+    if(/^\s*[-*+]\s+/.test(line)){let b=[];while(i<lines.length&&/^\s*[-*+]\s+/.test(lines[i])){b.push(`<li style="margin:0 0 6px;">${inline(lines[i].replace(/^\s*[-*+]\s+/,""))}</li>`);i++;}out.push(`<ul style="margin:0 0 18px;padding-left:22px;">${b.join("")}</ul>`);continue;}
+    if(/^\s*\d+\.\s+/.test(line)){let b=[];while(i<lines.length&&/^\s*\d+\.\s+/.test(lines[i])){b.push(`<li style="margin:0 0 6px;">${inline(lines[i].replace(/^\s*\d+\.\s+/,""))}</li>`);i++;}out.push(`<ol style="margin:0 0 18px;padding-left:22px;">${b.join("")}</ol>`);continue;}
+    let b=[];
+    while(i<lines.length&&!/^\s*$/.test(lines[i])&&!/^\s*(>|#{1,6}\s|[-*+]\s|\d+\.\s|-{3,}\s*$|\*{3,}\s*$)/.test(lines[i])){b.push(lines[i]);i++;}
+    flushP(b);
+  }
+  return out.join("\n");
+}
+
+/* ---------- compose ---------- */
+function buildInner(meta,content,url){
+  const title=meta.title||"Untitled",subtitle=meta.subtitle||"",d=fmtDate(meta.date);
+  const sub=subtitle?`<p style="font-size:16px;color:#555;font-style:italic;margin:0 0 6px;">${subtitle}</p>`:"";
+  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color:#e8f6e4;margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;">
+ <tr><td align="center" style="padding:20px 0;">
+  <table role="presentation" width="700" cellpadding="0" cellspacing="0" border="0" style="width:700px;max-width:700px;background-color:#ffffff;padding:24px;border:1px solid #ddd;border-radius:8px;">
+   <tr><td style="text-align:left;font-family:Arial,Helvetica,sans-serif;">
+    <p style="margin:0 0 12px;font-size:14px;"><a href="${url}" target="_blank" style="color:${GREEN};text-decoration:underline;">View in Browser</a></p>
+    <div style="text-align:center;margin-bottom:20px;"><a href="https://ben-mini.com" target="_blank"><img src="${LOGO}" alt="ben-mini" style="max-width:240px;width:100%;height:auto;border:0;"></a></div>
+    <h1 style="font-size:26px;line-height:1.25;color:#222;margin:0 0 6px;">${title}</h1>
+    ${sub}
+    <p style="font-size:14px;color:#777;margin:0 0 18px;">${d.pretty}</p>
+    <hr style="border:0;border-top:1px solid ${GREEN};margin:20px 0;">
+    <div style="font-size:16px;color:#333;line-height:1.65;">${content}</div>
+    <hr style="border:0;border-top:1px solid ${GREEN};margin:24px 0 16px;">
+    <p style="font-size:12px;color:#888;text-align:center;margin:0;"><a href="${UNSUB}" target="_blank" style="color:${GREEN};text-decoration:underline;">Unsubscribe</a></p>
+   </td></tr>
+  </table>
+ </td></tr>
+</table>`;
+}
+function fullDoc(inner){return `<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"></head>\n<body style="margin:0;padding:0;background-color:#e8f6e4;">\n${inner}\n</body></html>`;}
+
+/* ---------- render ---------- */
+let currentInner="",currentFull="";
+function autoUrl(meta){
+  const ff=fromFilename(currentFilename);
+  const year=(ff&&ff.year)||fmtDate(meta.date).year||"";
+  const slug=(ff&&ff.slug)||slugify(meta.title);
+  return `https://ben-mini.com/${year}/${slug}`;
+}
+function render(){
+  const {meta,body}=parse(mdEl.value);
+  const au=autoUrl(meta);
+  if(!urlEdited)urlEl.value=au;
+  $("#urlAuto").style.display=urlEdited?"none":"inline";
+  const url=urlEl.value||au;
+  currentInner=buildInner(meta,mdToHtml(body),url);
+  currentFull=fullDoc(currentInner);
+  $("#preview").innerHTML=currentInner;
+  const d=fmtDate(meta.date);
+  $("#metaLine").textContent=[meta.title,d.pretty].filter(Boolean).join("  ·  ");
+}
+
+/* ---------- GitHub ---------- */
+function setStatus(t,warn){const s=$("#status");s.textContent=t;s.className="pill"+(warn?" warn":"");}
+async function loadList(){
+  setStatus("loading…");
+  try{
+    const r=await fetch(`https://api.github.com/repos/${REPO}/contents/${POSTS}?ref=${BRANCH}`,{headers:{Accept:"application/vnd.github+json"}});
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    const files=(await r.json()).filter(f=>/\.(md|markdown)$/i.test(f.name)).map(f=>f.name).sort().reverse();
+    postEl.innerHTML="";
+    files.forEach(name=>{
+      const ff=fromFilename(name),o=document.createElement("option");
+      o.value=name;o.textContent=ff?`${shortDate(ff.date)}  —  ${ff.slug}`:name;
+      postEl.appendChild(o);
+    });
+    setStatus(files.length+" posts");
+    if(files.length){postEl.value=files[0];await loadPost(files[0]);}
+  }catch(e){
+    setStatus("GitHub unreachable — paste manually",true);
+    postEl.innerHTML='<option>— couldn\'t load list —</option>';
+  }
+}
+async function loadPost(name){
+  setStatus("fetching post…");
+  try{
+    const r=await fetch(`https://raw.githubusercontent.com/${REPO}/${BRANCH}/${POSTS}/${name}`);
+    if(!r.ok)throw new Error("HTTP "+r.status);
+    currentFilename=name;urlEdited=false;
+    mdEl.value=await r.text();
+    render();
+    setStatus(postEl.options.length+" posts");
+  }catch(e){setStatus("couldn't fetch post",true);}
+}
+
+/* ---------- toast ---------- */
+let tT;function toast(m,err){const t=$("#toast");t.textContent=m;t.className="show"+(err?" err":"");clearTimeout(tT);tT=setTimeout(()=>t.className="",2300);}
+
+/* ---------- actions ---------- */
+$("#copyGmail").addEventListener("click",async()=>{
+  try{
+    await navigator.clipboard.write([new ClipboardItem({
+      "text/html":new Blob([currentInner],{type:"text/html"}),
+      "text/plain":new Blob([$("#preview").innerText],{type:"text/plain"})
+    })]);
+    toast("Copied — paste straight into a Gmail compose window");
+  }catch(e){toast("Rich copy needs https/localhost — use Download instead",true);}
+});
+$("#copyHtml").addEventListener("click",async()=>{try{await navigator.clipboard.writeText(currentFull);toast("HTML source copied");}catch(e){toast("Copy blocked by browser",true);}});
+$("#download").addEventListener("click",()=>{const b=new Blob([currentFull],{type:"text/html"});const a=document.createElement("a");const {meta}=parse(mdEl.value);a.href=URL.createObjectURL(b);a.download=(fromFilename(currentFilename)?.slug||slugify(meta.title)||"newsletter")+".html";a.click();URL.revokeObjectURL(a.href);toast("Downloaded");});
+postEl.addEventListener("change",()=>loadPost(postEl.value));
+$("#refresh").addEventListener("click",loadList);
+urlEl.addEventListener("input",()=>{urlEdited=true;$("#urlAuto").style.display="none";render();});
+$("#reAuto").addEventListener("click",()=>{urlEdited=false;render();});
+mdEl.addEventListener("input",()=>{urlEdited=false;render();});
+
+loadList();
+</script>
+</body>
+</html>
