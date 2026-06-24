@@ -2,5 +2,6 @@ name = "ben-mini-subscribe"
 main = "index.js"
 compatibility_date = "2025-01-01"
 
-# Secrets (RESEND_API_KEY, RESEND_AUDIENCE_ID) are set via `wrangler secret put`,
-# never stored here. See index.js for the full deploy steps.
+[observability]
+enabled = true
+invocation_logs = true

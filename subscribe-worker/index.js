@@ -59,6 +59,7 @@ export default {
     }
 
     const result = await addContact(env, email, firstName);
+    console.log(`subscribe ${email} -> ${result.ok ? (result.already ? "already" : "added") : "error " + (result.status || "")}`);
     if (result.ok) return json(200, { ok: true, already: !!result.already }, headers);
     return json(result.status || 502, { ok: false, error: result.error || "Couldn't subscribe right now." }, headers);
   },
