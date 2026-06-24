@@ -40,8 +40,8 @@ permalink: /subscribe/
   #sub-btn:disabled { opacity: .6; cursor: default; }
 
   #sub-msg { margin: .8em 0 0; font-size: .92em; min-height: 1.1em; }
-  #sub-msg.ok { color: #3a9329; }
-  #sub-msg.err { color: #b3261e; }
+  #sub-msg.ok { color: #000; }
+  #sub-msg.err { color: #000; }
 
   .sub-rss { margin: 0; font-size: .95em; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
   #rss-copy {
