@@ -74,19 +74,11 @@
     </div>
     <div class="controls">
       <div class="field">
-        <label for="post">Post (newest first, from GitHub)</label>
+        <label for="post">Post</label>
         <div class="row">
           <select id="post"><option>Loading posts…</option></select>
           <button class="icon" id="refresh" title="Reload list from GitHub">↻</button>
         </div>
-      </div>
-      <div class="field">
-        <label for="url">Post URL <span id="urlAuto" style="color:var(--green-d)">(auto)</span></label>
-        <div class="row">
-          <input type="text" id="url" autocomplete="off" spellcheck="false">
-          <button class="icon" id="reAuto" title="Recompute from filename/title">↻</button>
-        </div>
-        <div class="hint">Auto-built from the real filename, so it always matches your Jekyll permalink. Edit if you ever need to.</div>
       </div>
     </div>
     <textarea id="md" spellcheck="false" placeholder="Pick a post above, or paste markdown (with --- front matter ---) here."></textarea>
@@ -110,8 +102,8 @@ const UNSUB="https://tally.so/r/w4PVQr";
 const IMG_BASE="https://ben-mini.com/assets/images/";
 
 const $=s=>document.querySelector(s);
-const mdEl=$("#md"),urlEl=$("#url"),postEl=$("#post");
-let urlEdited=false, currentFilename="";
+const mdEl=$("#md"),postEl=$("#post");
+let currentFilename="";
 
 /* ---------- helpers ---------- */
 function slugify(t){return (t||"").toLowerCase().replace(/[‘’']/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"");}
@@ -196,11 +188,7 @@ function autoUrl(meta){
 }
 function render(){
   const {meta,body}=parse(mdEl.value);
-  const au=autoUrl(meta);
-  if(!urlEdited)urlEl.value=au;
-  $("#urlAuto").style.display=urlEdited?"none":"inline";
-  const url=urlEl.value||au;
-  currentInner=buildInner(meta,mdToHtml(body),url);
+  currentInner=buildInner(meta,mdToHtml(body),autoUrl(meta));
   currentFull=fullDoc(currentInner);
   $("#preview").innerHTML=currentInner;
   const d=fmtDate(meta.date);
@@ -233,7 +221,7 @@ async function loadPost(name){
   try{
     const r=await fetch(`https://raw.githubusercontent.com/${REPO}/${BRANCH}/${POSTS}/${name}`);
     if(!r.ok)throw new Error("HTTP "+r.status);
-    currentFilename=name;urlEdited=false;
+    currentFilename=name;
     mdEl.value=await r.text();
     render();
     setStatus(postEl.options.length+" posts");
@@ -257,9 +245,7 @@ $("#copyHtml").addEventListener("click",async()=>{try{await navigator.clipboard.
 $("#download").addEventListener("click",()=>{const b=new Blob([currentFull],{type:"text/html"});const a=document.createElement("a");const {meta}=parse(mdEl.value);a.href=URL.createObjectURL(b);a.download=(fromFilename(currentFilename)?.slug||slugify(meta.title)||"newsletter")+".html";a.click();URL.revokeObjectURL(a.href);toast("Downloaded");});
 postEl.addEventListener("change",()=>loadPost(postEl.value));
 $("#refresh").addEventListener("click",loadList);
-urlEl.addEventListener("input",()=>{urlEdited=true;$("#urlAuto").style.display="none";render();});
-$("#reAuto").addEventListener("click",()=>{urlEdited=false;render();});
-mdEl.addEventListener("input",()=>{urlEdited=false;render();});
+mdEl.addEventListener("input",render);
 
 loadList();
 </script>
