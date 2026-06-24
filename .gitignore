@@ -4,6 +4,9 @@ _site
 .jekyll-metadata
 vendor
 
+# macOS
+.DS_Store
+
 _drafts/
 
 .claude
