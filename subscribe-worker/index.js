@@ -71,6 +71,16 @@ async function addContact(env, email, first_name) {
   };
   const id = env.RESEND_AUDIENCE_ID;
 
+  // Resend upserts silently (re-adding returns 201, not an error), so check for an
+  // existing, still-subscribed contact first to report "already subscribed" accurately.
+  try {
+    const g = await fetch(`https://api.resend.com/audiences/${id}/contacts/${encodeURIComponent(email)}`, { headers: auth });
+    if (g.ok) {
+      const c = await g.json();
+      if (c && c.unsubscribed === false) return { ok: true, already: true };
+    }
+  } catch {}
+
   // A segment may be a manual list or a filter, so try each add shape; the bare
   // /contacts create always works and the contact joins by matching. First win returns.
   const attempts = [
@@ -88,8 +98,6 @@ async function addContact(env, email, first_name) {
       continue;
     }
     if (res.ok) return { ok: true };
-    const text = await res.text();
-    if (/already|duplicate|exists/i.test(text)) return { ok: true, already: true };
     last = { status: res.status, error: friendly(res.status) };
     if (res.status === 401 || res.status === 403) break; // auth is broken, no point retrying
   }
