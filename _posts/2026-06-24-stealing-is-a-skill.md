@@ -16,11 +16,11 @@ Abloh never went into much detail beyond that, but Justin and I began to make it
 
 Justin and I wanted to rebuild [our marketing site](https://www.kibu.com), but we lacked a solid vision. We knew we wanted a beautiful [top-fold](https://www.shopify.com/blog/above-the-fold) and a modern, minimal component library that could be reused across pages. We came across [Mintlify's 2025 marketing site](https://web.archive.org/web/20250901075903/https://mintlify.com/) and fell in love: an eye-grabbing top-fold, decisive use of colors, and a "show, don't tell" ethos revealed all we wanted to create. The fact that Mintlify and Kibu are both documentation tools (albeit *very* different definitions of the word) was an added bonus. So, **we literally rebuilt the Mintlify site, pixel-by-pixel.**
 
-![[mintlify v kibu.png]]
+![Mintlify site versus Kibu site comparison](../assets/images/mintlify-v-kibu.png)
 
 When you recreate someone's creation, you learn their story: every piece of brilliance, tradeoff, and imperfection. *Why add a hover effect here and not there? What does three consecutive black and white sections do to the mind? Oh wow, look how all components' widths fall perfectly flush with the floating, bg-blurred navbar:*
 
-![[mintlify-zoom.gif]]
+![Zoomed view of Mintlify navbar and components aligning flush](../assets/images/mintlify-zoom.gif)
 
 Mintlify's site wasn't perfect by any stretch: yet stealing it proved to be an efficient way to achieve our goals. And as we stole, our intuitions brought us to that 3%. *Our nav popover can be much more minimal. Our team is our brand- let's add their pictures to the CTA buttons. Part of our product is videos- let's have more videos than screenshots.* These little "side quests" taught us more about our brand than any 3-day workshop could have. In less than a month of weekend work, we had a deployed site in Framer². 
 
