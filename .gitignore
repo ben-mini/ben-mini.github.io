@@ -9,3 +9,8 @@ _drafts/
 .claude
 
 .obsidian/
+
+# Resend / send.js
+.env
+.preview.html
+node_modules/
