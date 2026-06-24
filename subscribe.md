@@ -4,33 +4,51 @@ title: Subscribe to ben-mini
 permalink: /subscribe/
 ---
 
-#### Subscribe via Email
-
-<form id="subscribe-form" novalidate>
-  <div class="sub-row">
+<div class="subscribe">
+  <p class="sub-label">Subscribe by email</p>
+  <form id="subscribe-form" novalidate>
     <input id="sub-email" type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
     <button id="sub-btn" type="submit">Subscribe</button>
-  </div>
+  </form>
   <p id="sub-msg" role="status" aria-live="polite"></p>
-</form>
+
+  <p class="sub-label sub-label--rss">Subscribe by RSS</p>
+  <p class="sub-rss"><a href="https://ben-mini.com/feed.xml">ben-mini.com/feed.xml →</a></p>
+</div>
 
 <style>
-  #subscribe-form { margin: 0 0 0.5em; max-width: 460px; }
-  .sub-row { display: flex; gap: 8px; flex-wrap: wrap; }
-  #sub-email {
-    flex: 1; min-width: 200px; font-size: 1em; padding: 10px 12px;
-    border: 1px solid #ccc; border-radius: 8px;
+  .subscribe { max-width: 460px; margin: 1.5em 0; }
+  .subscribe .sub-label { font-size: .95em; font-weight: 700; color: #333; margin: 0 0 .6em; }
+  .subscribe .sub-label--rss { margin-top: 1.75em; }
+
+  #subscribe-form {
+    display: flex; gap: 8px; margin: 0; padding: 0;
+    background: none !important; border: 0 !important; box-shadow: none !important;
   }
-  #sub-email:focus { outline: none; border-color: #4bae34; box-shadow: 0 0 0 3px rgba(75,174,52,.15); }
+  #sub-email {
+    flex: 1; min-width: 0; margin: 0; font-size: 1em; line-height: 1.3; padding: 11px 14px;
+    color: #222; background: #fff; border: 1px solid #d4d4d4; border-radius: 8px; box-shadow: none;
+  }
+  #sub-email:focus { outline: none; border-color: #4bae34; box-shadow: 0 0 0 3px rgba(75,174,52,.18); }
+
   #sub-btn {
-    font-size: 1em; font-weight: 600; padding: 10px 18px; cursor: pointer;
-    color: #fff; background: #4bae34; border: 1px solid #4bae34; border-radius: 8px;
+    flex: 0 0 auto; margin: 0; font-size: 1em; font-weight: 700; line-height: 1.3; white-space: nowrap;
+    padding: 11px 22px; cursor: pointer; color: #fff;
+    background: #4bae34; border: 1px solid #4bae34; border-radius: 8px; box-shadow: none;
   }
   #sub-btn:hover:not(:disabled) { background: #3a9329; border-color: #3a9329; }
   #sub-btn:disabled { opacity: .6; cursor: default; }
-  #sub-msg { margin: 10px 0 0; font-size: .95em; min-height: 1.2em; }
+
+  #sub-msg { margin: .8em 0 0; font-size: .92em; min-height: 1.1em; }
   #sub-msg.ok { color: #3a9329; }
   #sub-msg.err { color: #b3261e; }
+
+  .sub-rss { margin: 0; font-size: .95em; }
+
+  @media (max-width: 460px) {
+    #subscribe-form { flex-wrap: wrap; }
+    #sub-btn { width: 100%; }
+  }
 </style>
 
 <script>
@@ -60,7 +78,7 @@ permalink: /subscribe/
         .then(function (r) { return r.json().then(function (d) { return { status: r.status, d: d }; }); })
         .then(function (res) {
           if (res.d && res.d.ok) {
-            setMsg(res.d.already ? "You're already on the list — thanks! 🎉" : "You're in! Check your inbox for the next one. 🎉", "ok");
+            setMsg(res.d.already ? "You're already on the list, thanks! 🎉" : "You're in! Thank you for subscribing.", "ok");
             form.reset();
           } else {
             setMsg((res.d && res.d.error) || "Something went wrong. Please try again.", "err");
@@ -71,7 +89,3 @@ permalink: /subscribe/
     });
   })();
 </script>
-
----
-
-[<span style="font-size: 1.0625em;">Subscribe via RSS</span>](https://ben-mini.com/feed.xml)
